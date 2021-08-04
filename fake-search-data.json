@@ -2,11 +2,11 @@
     {
         "id": 1, 
         "picture": [
-            "https://images.pexels.com/photos/7018387/pexels-photo-7018387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            ["https://images.pexels.com/photos/7018387/pexels-photo-7018387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://picsum.photos/940/650/?random=1",
             "https://picsum.photos/940/650/?random=2",
-            "https://picsum.photos/940/650/?random=3",
+            "https://picsum.photos/940/650/?random=3"],
             "base64"
         ],
         "wishList": {
@@ -52,8 +52,12 @@
     {
         "id": 2, 
         "picture": [
-            "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "base64"
+            ["https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://picsum.photos/940/650/?random=4",
+                "https://picsum.photos/940/650/?random=5",
+                "https://picsum.photos/940/650/?random=6",
+                "https://picsum.photos/940/650/?random=7"],
+                "base64"
         ],
         "wishList": {
             "id": 12,
@@ -98,7 +102,11 @@
     {
         "id": 3, 
         "picture": [
-            "https://images.pexels.com/photos/6523302/pexels-photo-6523302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            ["https://images.pexels.com/photos/6523302/pexels-photo-6523302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://picsum.photos/940/650/?random=9",
+                "https://picsum.photos/940/650/?random=10",
+                "https://picsum.photos/940/650/?random=11",
+                "https://picsum.photos/940/650/?random=12"],
             "base64"
         ],
         "wishList": {
@@ -144,8 +152,12 @@
     {
         "id": 4, 
         "picture": [
-            "https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "base64"
+            ["https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://picsum.photos/940/650/?random=13",
+                "https://picsum.photos/940/650/?random=14",
+                "https://picsum.photos/940/650/?random=15",
+                "https://picsum.photos/940/650/?random=16"],
+                "base64"
         ],
         "wishList": {
             "id": 12,
@@ -190,8 +202,12 @@
     {
         "id": 5, 
         "picture": [
-            "https://images.pexels.com/photos/2029670/pexels-photo-2029670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "base64"
+            ["https://images.pexels.com/photos/2029670/pexels-photo-2029670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://picsum.photos/940/650/?random=21",
+                "https://picsum.photos/940/650/?random=31",
+                "https://picsum.photos/940/650/?random=41",
+                "https://picsum.photos/940/650/?random=51"],
+                "base64"
         ],
         "wishList": {
             "id": 12,
