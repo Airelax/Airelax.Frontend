@@ -133,7 +133,6 @@
             "origin": 684,
             "sweetPrice": 1200,
             "Fee": {
-                "CleanFee": 500,
                 "ServiceFee": 200,
                 "taxFee": 230
             },
@@ -181,11 +180,10 @@
         },
         "Price": {
             "origin": 100000,
-            "sweetPrice": 1200,
+            "sweetPrice": 666,
             "Fee": {
                 "CleanFee": 500,
-                "ServiceFee": 200,
-                "taxFee": 230
+                "ServiceFee": 200
             },
             "Discount": {
                 "Week": 10,
@@ -231,11 +229,11 @@
         },
         "Price": {
             "origin": 1500,
-            "sweetPrice": 1200,
+            "sweetPrice": 555,
             "Fee": {
                 "CleanFee": 500,
                 "ServiceFee": 200,
-                "taxFee": 230
+                "taxFee": 9999
             },
             "Discount": {
                 "Week": 10,
