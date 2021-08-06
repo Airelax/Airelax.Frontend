@@ -1,0 +1,179 @@
+* {
+  // outline: 1px solid red;
+  font-family: "Noto Sans TC", sans-serif;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #000;
+  }
+  .roomRow {
+    // width: 100%;
+    color: #000;
+    margin: 0 auto 20px;
+    .col-12.col-md-5 {
+      .linking {
+        position: relative;
+        top: 38px;
+        z-index: 10;
+        padding: 0 10px;
+        .bestlandlord {
+          a {
+            letter-spacing: 1px;
+            color: #000;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 3px 8px;
+            text-align: center;
+          }
+          text-align: start;
+          margin-right: auto;
+        }
+        .heart {
+          .svgphoneheart {
+            fill: rgba(0, 0, 0, 0.5);
+            height: 24px;
+            width: 24px;
+            stroke: rgb(255, 255, 255);
+            stroke-width: 2;
+            overflow: visible;
+          }
+        }
+      }
+    }
+    .col-12.col-md-7 {
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 300;
+      .row {
+        text-align: start;
+        .comment {
+          a {
+            display: inline-flex;
+            .star {
+              height: 14px;
+              width: 14px;
+              fill: #ff385c;
+              margin: auto 4px;
+            }
+            .starScore,
+            .commentCount {
+              font-size: 14px;
+            }
+            .commentCount {
+              color: #717374;
+            }
+          }
+        }
+        .info {
+          a {
+            .roomCategory,
+            .town {
+              color: #2f2f2f;
+            }
+          }
+        }
+        .title {
+          a {
+            .roomTitle {
+              color: #2f2f2f;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .pricerow {
+        .originAndSweet {
+          .sweetPrice,
+          .origin {
+            font-weight: 700;
+          }
+          .origin {
+            color: #717176;
+            text-decoration: line-through;
+          }
+        }
+        .total {
+          .mdStarLink {
+            .star {
+              height: 14px;
+              width: 14px;
+              fill: #ff385c;
+              margin: auto 4px;
+            }
+          }
+          .totalLink {
+            font-size: 15px;
+            text-decoration: underline;
+            color: #717171;
+          }
+          .totalLink:hover {
+            text-decoration: underline #000;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and(min-width:768px) {
+  .roomRow {
+    border-top: 1px solid #ededed;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    .col-12.col-md-7 {
+      .commentInfoTitle {
+        .col.col-md-11 {
+          .mdinfo {
+            font-size: 15px;
+            color: #717171;
+          }
+          .title {
+            a {
+              .roomTitle {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+        .col-md-1 {
+          .mdHeart {
+            .svgmdheart {
+              border-radius: 50%;
+              box-sizing: border-box;
+              padding: 10px;
+              fill: #fff;
+              stroke: #000;
+              stroke-width: 2;
+              width: 44px;
+              height: 44px;
+            }
+            .svgmdheart:hover {
+              background-color: #efefef;
+            }
+          }
+        }
+      }
+      .spacerow {
+        font-size: 15px;
+        color: #717171;
+      }
+      .pricerow {
+        .mdStarLink {
+          font-size: 15px;
+          .commentCount {
+            color: #717171;
+          }
+        }
+      }
+    }
+  }
+}
