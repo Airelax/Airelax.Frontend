@@ -1,14 +1,17 @@
 <template>
   <div class="container-md-fluid" v-if="get">
     <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
+    <BrowsingRecord :rooms="rooms" :nightCount="nightCount"></BrowsingRecord>
   </div>
 </template>
 <script>
 import axios from "axios";
 import ResultRoom from "../components/_Cyuan/_cyuan.vue";
+import BrowsingRecord from "../components/_Cyuan/BrowsingRecord.vue";
 export default {
   components: {
     ResultRoom,
+    BrowsingRecord,
   },
   data() {
     return {

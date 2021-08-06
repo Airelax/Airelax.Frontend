@@ -7,7 +7,7 @@
       clickable: true,
     }"
     :navigation="true"
-    class="mySwiper"
+    class="roomPicture"
   >
     <swiper-slide v-for="picture in roomPicture" :key="picture.index">
       <img :src="picture" />
@@ -48,11 +48,12 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/navigation/navigation.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 SwiperCore.use([Pagination, Navigation]);
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/navigation/navigation.scss";
+
 export default {
   components: {
     Swiper,

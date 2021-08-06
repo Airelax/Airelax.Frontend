@@ -19,7 +19,7 @@
         <p>${{ prices.sweetPrice }} x {{ nightCount }}晚</p>
         <p>${{ prices.sweetPrice * nightCount }}</p>
       </div>
-      <div class="row">
+      <div class="row list">
         <div class="col">
           <div
             class="row"
@@ -52,7 +52,7 @@
   height: auto;
   .offcanvas-header {
     border-bottom: 0.5px solid #ededed;
-    padding: 10px 20px 10px 20px;
+    padding: 20px;
     .btn-close {
       color: #000;
       opacity: 1;
@@ -70,15 +70,19 @@
   }
   .offcanvas-body {
     font-size: 15px;
-    padding: 20px 27px;
+    padding: 20px;
     .calTotal {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       letter-spacing: 1px;
     }
-    .fee {
-      text-align: end;
+    .list {
+      .col {
+        .fee {
+          text-align: end;
+        }
+      }
     }
   }
 }

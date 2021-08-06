@@ -2,7 +2,7 @@
   <div
     class="offcanvas offcanvas-bottom"
     tabindex="-1"
-    id="wish"
+    id="list"
     aria-labelledby="wishTitle"
   >
     <div class="offcanvas-header">
@@ -12,14 +12,24 @@
         data-bs-dismiss="offcanvas"
         aria-label="Close"
       ></button>
-      <p class="offcanvas-title" id="wishTitle">心願單</p>
+      <p class="offcanvas-title" id="wishTitle">你的心願單</p>
     </div>
     <div class="offcanvas-body small">
       <div class="row">
-        <div class="col-3 btn">
+        <div class="col-3">
+          <img
+            src="https://a0.muscache.com/im/pictures/2cf775f5-3b30-4806-8572-977a74b6834e.jpg"
+            alt=""
+          />
+        </div>
+        <div class="col-9">建立新的心願單</div>
+      </div>
+      <div class="row" v-for="item in 3" :key="item">
+        <!-- 等資料進來，現在放假ˇ資料 -->
+        <div class="col-3">
           <img src="https://picsum.photos/70/70/?random=1" />
         </div>
-        <div class="col-9 btn">心願單名字</div>
+        <div class="col-9">心願單名字</div>
       </div>
     </div>
   </div>
@@ -31,11 +41,11 @@
   height: auto;
   .offcanvas-header {
     border-bottom: 0.5px solid #ededed;
-    padding: 12px;
+    padding: 20px 30px;
     .btn-close {
       color: #000;
       opacity: 1;
-      font-size: 10px;
+      font-size: 12px;
     }
     .btn-close:hover {
       background-color: #efefef80;
@@ -43,21 +53,23 @@
     }
     .offcanvas-title {
       margin: auto;
-      font-size: 15px;
-      font-weight: 400;
+      font-size: 16px;
+      font-weight: 500;
     }
   }
   .offcanvas-body {
-    font-size: 15px;
-    padding: 20px 27px;
     .row {
+      margin-top: 10px;
       .col-3 {
         img {
+          width: 70px;
+          height: 70px;
           border-radius: 10px;
         }
       }
       .col-9 {
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 400;
         text-align: start;
         margin-top: auto;
         margin-bottom: auto;

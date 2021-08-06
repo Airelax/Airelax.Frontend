@@ -1,24 +1,42 @@
 <template>
   <div
-    class="row roomRow d-md-flex align-items-center"
+    class="row eachRoom d-md-flex align-items-center"
     v-for="room in rooms"
     :key="room.id"
+    type="button"
   >
-    <div class="col-12 col-md-5 position-relative">
-      <div class="linking d-flex flex-row">
-        <div class="bestlandlord" id="bestLandLord">
-          <a href="#">超讚房東</a>
-        </div>
-        <div class="heart d-md-none">
-          <a
-            href="#"
-            class="wish"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#wish"
-            aria-controls="offcanvasBottom"
+    <div class="col-12 col-md-5">
+      <div class="label d-flex flex-row">
+        <div class="perfect">超讚房東</div>
+        <!-- heart 功能外觀一併 寫成component -->
+        <div
+          class="heart d-md-none"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#list"
+          aria-controls="offcanvasBottom"
+        >
+          <svg
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
           >
+            <path
+              d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <Wish></Wish>
+      <RoomSwiper :roomPicture="room.picture[0]"></RoomSwiper>
+    </div>
+    <div class="col-12 col-md-7">
+      <div class="row commentInfoTitle">
+        <div class="col col-md-11">
+          <div class="comment d-md-none">
             <svg
-              class="svgphoneheart"
+              class="star"
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -26,42 +44,16 @@
               focusable="false"
             >
               <path
-                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
+                fill-rule="evenodd"
               ></path>
             </svg>
-          </a>
-        </div>
-      </div>
-      <Wish></Wish>
-      <div class="carousel">
-        <RoomSwiper :roomPicture="room.picture[0]"></RoomSwiper>
-      </div>
-    </div>
-    <div class="col-12 col-md-7">
-      <div class="row commentInfoTitle">
-        <div class="col col-md-11">
-          <div class="comment d-md-none">
-            <a href="#">
-              <svg
-                class="star"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                role="presentation"
-                focusable="false"
-              >
-                <path
-                  d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
-                  fill-rule="evenodd"
-                ></path>
-              </svg>
-              <span class="starScore" id="starScore">
-                {{ room.comment.star }}
-              </span>
-              <span class="commentCount" id="commentCount"
-                >({{ room.comment.TotalComments }})</span
-              >
-            </a>
+            <span class="starScore" id="starScore">
+              {{ room.comment.star }}
+            </span>
+            <span class="commentCount" id="commentCount"
+              >({{ room.comment.TotalComments }})</span
+            >
           </div>
           <div class="info d-md-none">
             <a href="#">
@@ -217,16 +209,17 @@ export default {
     },
     getTotal(price, nightCount) {
       let feeTotal;
-      if (!price.Fee.CleanFee && !price.Fee.taxFee) {
-        feeTotal = Number(
-          price.Fee.CleanFee + price.Fee.ServiceFee + price.Fee.taxFee
-        );
-      } else if (price.Fee.CleanFe && !price.Fee.taxFee) {
-        feeTotal = Number(price.Fee.ServiceFee + price.Fee.taxFee);
-      } else if (!price.Fee.CleanFee && price.Fee.taxFee) {
-        feeTotal = Number(price.Fee.CleanFee + price.Fee.ServiceFee);
-      } else {
-        feeTotal = Number(price.Fee.ServiceFee);
+      let cleanFee = price.Fee.CleanFee;
+      let taxFee = price.Fee.taxFee;
+      let serviceFee = price.Fee.ServiceFee;
+      if (!!cleanFee && !!taxFee)
+        feeTotal = Number(cleanFee) + Number(serviceFee) + Number(taxFee);
+      else if (cleanFee && !!taxFee)
+        feeTotal = Number(serviceFee) + Number(cleanFee);
+      else if (!!cleanFee && taxFee)
+        feeTotal = Number(taxFee) + Number(serviceFee);
+      else {
+        feeTotal = Number(serviceFee);
       }
       return (
         Number(price.sweetPrice) * nightCount +

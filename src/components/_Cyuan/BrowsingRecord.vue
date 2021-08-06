@@ -9,12 +9,22 @@
     </div>
     <div class="row">
       <div class="scroll">
-        <div class="col"></div>
+        <ResultRoom
+          class="col d-flex flex-row"
+          :rooms="rooms"
+          :nightCount="nightCount"
+        ></ResultRoom>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import ResultRoom from "./_cyuan.vue";
+export default {
+  components: {
+    ResultRoom,
+  },
+  props: ["rooms", "nightCount"],
+};
 </script>
