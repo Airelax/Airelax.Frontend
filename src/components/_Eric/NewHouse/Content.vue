@@ -7,8 +7,8 @@
     <div class="content">
       <slot><div class="error">Oops! Something Error</div></slot>
     </div>
-    <div class="step-controls">
-      <RentStepControl></RentStepControl>
+    <div v-if="notFirst" class="step-controls">
+      <StepControl></StepControl>
     </div>
   </div>
 </template>
@@ -21,9 +21,12 @@
 
 .contain {
   width: 100%;
-  height: 100%;
   position: relative;
   display: block;
+}
+
+.content {
+  padding-bottom: 80px;
 }
 
 .step-controls {
@@ -32,20 +35,36 @@
   position: fixed;
   bottom: 0;
   border-top: 1px solid #000;
+  background-color: #fff;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .contain {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
 
   .content {
     flex-grow: 1;
+    padding-bottom: 0;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   }
 
   .create-helper {
-    display: block;
+    display: flex;
+    padding: 20px 0;
   }
 
   .step-controls {
@@ -55,13 +74,18 @@
 </style>
 
 <script>
-import RentStepControl from "./RentStepControl.vue";
-import Helper from "./CreateHouseHelper.vue";
+import StepControl from "./StepControl.vue";
+import Helper from "./Helper.vue";
 export default {
+  props: {
+    notFirst: {
+      type: Boolean,
+      default: true,
+    },
+  },
   components: {
-    RentStepControl,
+    StepControl,
     Helper,
   },
-  props: ["cls"],
 };
 </script>

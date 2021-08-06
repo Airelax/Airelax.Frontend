@@ -28,6 +28,11 @@ const routes = [
     component: () => import('../views/_Eric.vue')
   },
   {
+    path: '/become-a-host',
+    name: 'become-a-host',
+    component: () => import('../views/Eric/NewHouse.vue')
+  },
+  {
     path: '/heather',
     name: 'Heather',
     component: () => import('../views/_Heather.vue')

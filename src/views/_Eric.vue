@@ -1,13 +1,12 @@
-
 <template>
-  <CreateNewHouse> test123413132 </CreateNewHouse>
+  <c></c>
 </template>
 
 <script>
-import CreateNewHouse from "../components/_Eric/CreateNewHouse.vue";
+import c from "./Eric/ChooseRoomType.vue";
 export default {
   components: {
-    CreateNewHouse,
+    c,
   },
 };
 </script>

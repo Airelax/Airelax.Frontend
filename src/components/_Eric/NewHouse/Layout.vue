@@ -1,13 +1,12 @@
 <template>
-  <t></t>
   <div class="page">
     <div class="rent-banner">
-      <RentBanner :title="title"></RentBanner>
+      <Banner :title="title"></Banner>
     </div>
     <div class="rent-content">
-      <RentContent>
+      <Content :notFirst="notFirst">
         <slot></slot>
-      </RentContent>
+      </Content>
     </div>
   </div>
 </template>
@@ -27,13 +26,15 @@
 .rent-content {
   margin-top: -20px;
   padding-top: 40px;
+  height: 80vh;
   width: 100%;
   background-color: #fff;
   border-radius: 20px 20px 0 0;
   position: relative;
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .page {
     display: flex;
   }
@@ -46,6 +47,7 @@
 
   .rent-content {
     margin-top: 0;
+    padding-top: 0;
     width: 50%;
     height: 100vh;
   }
@@ -53,21 +55,23 @@
 </style>
 
 <script>
-import RentBanner from "./RentBanner.vue";
-import RentContent from "./RentContent.vue";
-import t from "./HousePublish.vue";
+import Banner from "./Banner.vue";
+import Content from "./Content.vue";
 
 export default {
   props: {
     title: {
       type: String,
-      default: "幹0量G8",
+      default: "未命名標題",
+    },
+    notFirst: {
+      type: Boolean,
+      default: true,
     },
   },
   components: {
-    RentBanner,
-    RentContent,
-    t,
+    Banner,
+    Content,
   },
 };
 </script>

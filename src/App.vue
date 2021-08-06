@@ -4,12 +4,12 @@
     <router-link to="/login">Login</router-link> |
     <router-link to="/chi">Chi</router-link> |
     <router-link to="/cyuan">Cyuan</router-link> |
-    <router-link to="/eric">Eric</router-link> |
+    <router-link to="/eric">Eric </router-link>|
     <router-link to="/heather">Heather</router-link> |
     <router-link to="/howard">Howard</router-link> |
     <router-link to="/yuan">Yuan</router-link> |
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
@@ -23,8 +23,11 @@
 
 #nav {
   padding: 30px;
+  display: flex;
+  justify-content: center;
 
   a {
+    margin: 0 5px;
     font-weight: bold;
     color: #2c3e50;
 

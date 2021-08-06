@@ -68,7 +68,7 @@ button {
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .helper {
     justify-content: flex-end;
 

@@ -4,7 +4,7 @@
       <img src="https://picsum.photos/50/50/?random=1" />
     </div>
     <div class="content">
-      <CreateHouseHelper></CreateHouseHelper>
+      <Helper></Helper>
       <h1>{{ title }}</h1>
     </div>
   </div>
@@ -37,7 +37,7 @@ h1 {
   font-size: 26px;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .banner {
     background: linear-gradient(to top, #441ca2, #d32677);
   }
@@ -64,7 +64,7 @@ h1 {
 </style>
 
 <script>
-import CreateHouseHelper from "./CreateHouseHelper.vue";
+import Helper from "./Helper.vue";
 export default {
   data() {
     return {};
@@ -73,7 +73,7 @@ export default {
     title: String,
   },
   components: {
-    CreateHouseHelper,
+    Helper,
   },
 };
 </script>
