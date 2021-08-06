@@ -1,10 +1,7 @@
 <template>
   <div class="page">
-    <div v-if="isVideoBanner" class="rent-banner viedo-banner">
-      <VideoBanner :image="img" :title="title"></VideoBanner>
-    </div>
-    <div v-else class="rent-banner">
-      <Banner :title="title"></Banner>
+    <div class="rent-banner">
+      <Banner v-if="!isVideoBanner" :title="title"></Banner>
     </div>
     <div class="rent-content">
       <Content :notFirst="notFirst">
@@ -37,10 +34,6 @@
   box-sizing: border-box;
 }
 
-.viedo-banner {
-  height: 50vh;
-}
-
 @media screen and (min-width: 768px) {
   .page {
     display: flex;
@@ -62,7 +55,6 @@
 </style>
 
 <script>
-import VideoBanner from "./VideoBanner.vue";
 import Banner from "./Banner.vue";
 import Content from "./Content.vue";
 
@@ -80,12 +72,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    img: { type: String },
   },
   components: {
     Banner,
     Content,
-    VideoBanner,
   },
 };
 </script>

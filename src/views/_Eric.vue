@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import c from "./Eric/ChooseRoomType.vue";
+import c from "./Eric/NamingHouse.vue";
 export default {
   components: {
     c,

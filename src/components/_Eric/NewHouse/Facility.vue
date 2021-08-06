@@ -1,20 +1,18 @@
 <template>
   <button @click="choose">
     <div class="item">
-      <div class="icon">
-        <slot></slot>
+      <div class="icon"><img :src="facility.img" alt="" /></div>
+      <div class="name">
+        {{ facility.chinese }}
       </div>
-      <div class="name"></div>
     </div>
   </button>
 </template>
 
 <style lang="scss" scoped>
 .item {
-  display: flex;
   color: #000;
   cursor: pointer;
-  align-items: center;
   padding: 24px 16px;
 
   box-sizing: border-box;
@@ -22,6 +20,7 @@
   justify-content: space-between;
   font-size: 18px;
   font-weight: 900;
+  height: 100%;
 }
 
 button {
@@ -36,6 +35,7 @@ button {
   padding: 0;
   border: 2px solid #ddd;
   border-radius: 12px;
+  height: 100%;
 
   &:hover {
     border-color: #000;
@@ -46,7 +46,12 @@ button {
   }
 }
 
-svg {
+.icon {
+  display: flex;
+  justify-content: center;
+}
+
+img {
   display: block;
   height: 52px;
   width: 52px;
@@ -57,7 +62,7 @@ svg {
 
 <script>
 export default {
-  props: {},
+  props: ["facility"],
 };
 </script>
 
