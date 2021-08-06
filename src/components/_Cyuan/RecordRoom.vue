@@ -1,15 +1,15 @@
 <template>
-  <div class="row eachRoom" type="button" v-for="room in rooms" :key="room.id">
+  <div class="col eachRoom" type="button" v-for="room in rooms" :key="room.id">
     <div class="col-12 col-md-5">
       <div class="label d-flex position-relative">
-        <div class="perfect  me-auto">超讚房東</div>
+        <div class="perfect me-auto">超讚房東</div>
         <!-- heart 功能外觀一併 寫成component -->
         <div
-          class="heart  ms-auto d-md-none"
+          class="heart ms-auto d-md-none"
           data-bs-toggle="offcanvas"
           data-bs-target="#list"
           aria-controls="offcanvasBottom"
-        > 
+        >
           <svg
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
-@import "@/assets/sass/_cyuan.scss";
+@import "@/assets/sass/recordRoom.scss";
 </style>
 
 <script>

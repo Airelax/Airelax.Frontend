@@ -1,7 +1,7 @@
 <template>
   <div class="container-md-fluid" v-if="get">
-    <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
-    <BrowsingRecord :rooms="rooms" :nightCount="nightCount"></BrowsingRecord>
+      <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
+      <BrowsingRecord :rooms="rooms" :nightCount="nightCount"></BrowsingRecord>
   </div>
 </template>
 <script>
