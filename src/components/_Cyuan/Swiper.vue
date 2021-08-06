@@ -10,6 +10,7 @@
     class="mySwiper"
   >
     <swiper-slide v-for="picture in roomPicture" :key="picture.index">
+      <img :src="picture" />
     </swiper-slide>
   </swiper>
 </template>
@@ -47,9 +48,9 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/swiper.scss";
-import "swiper/components/pagination/pagination.scss";
-import "swiper/components/navigation/navigation.scss";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/navigation/navigation.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 SwiperCore.use([Pagination, Navigation]);
 export default {
@@ -58,8 +59,5 @@ export default {
     SwiperSlide,
   },
   props: ["roomPicture"],
-  mounted() {
-    console.log(this.roomPicture);
-  },
 };
 </script>

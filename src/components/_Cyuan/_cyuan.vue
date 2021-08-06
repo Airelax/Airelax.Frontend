@@ -108,16 +108,16 @@
       </div>
       <div class="row spacerow d-none d-md-block">
         <p class="space">
-          <span v-if="room.Space.CustomerNumber !== undefined" class="customer">
+          <span v-if="room.Space.CustomerNumber" class="customer">
             {{ room.Space.CustomerNumber }}位．</span
           >
-          <span v-if="room.Space.Bedroom !== undefined" class="bedRoom">
+          <span v-if="room.Space.Bedroom" class="bedRoom">
             {{ room.Space.Bedroom }}間臥室．</span
           >
-          <span v-if="room.Space.Bed !== undefined" class="bed">
+          <span v-if="room.Space.Bed" class="bed">
             {{ room.Space.Bed }}張床．</span
           >
-          <span v-if="room.Space.Bathroom !== undefined" class="bathRoom">
+          <span v-if="room.Space.Bathroom" class="bathRoom">
             {{ room.Space.Bathroom }}間衛浴
           </span>
         </p>
@@ -217,19 +217,13 @@ export default {
     },
     getTotal(price, nightCount) {
       let feeTotal;
-      if (price.Fee.CleanFee !== undefined && price.Fee.taxFee !== undefined) {
+      if (!price.Fee.CleanFee && !price.Fee.taxFee) {
         feeTotal = Number(
           price.Fee.CleanFee + price.Fee.ServiceFee + price.Fee.taxFee
         );
-      } else if (
-        price.Fee.CleanFee === undefined &&
-        price.Fee.taxFee !== undefined
-      ) {
+      } else if (price.Fee.CleanFe && !price.Fee.taxFee) {
         feeTotal = Number(price.Fee.ServiceFee + price.Fee.taxFee);
-      } else if (
-        price.Fee.CleanFee !== undefined &&
-        price.Fee.taxFee === undefined
-      ) {
+      } else if (!price.Fee.CleanFee && price.Fee.taxFee) {
         feeTotal = Number(price.Fee.CleanFee + price.Fee.ServiceFee);
       } else {
         feeTotal = Number(price.Fee.ServiceFee);
