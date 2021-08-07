@@ -8,7 +8,7 @@
   a:hover {
     color: #000;
   }
-  .eachRoom {
+  .eachRoomCol {
     margin: 0 auto 20px;
     .col-12.col-md-5 {
       .label {
@@ -111,7 +111,7 @@
   }
 }
 @media screen and(min-width:768px) {
-  .eachRoom {
+  .eachRoomCol {
     border-top: 1px solid #ededed;
     margin-bottom: 20px;
     padding-right: 10px;
