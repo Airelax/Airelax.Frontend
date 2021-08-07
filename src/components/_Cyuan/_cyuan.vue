@@ -3,26 +3,22 @@
     <div class="col-12 col-md-5">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
-        <!-- heart 功能外觀一併 寫成component -->
-        <div
-          class="heart ms-auto d-md-none"
+        <Heart
+          class="d-md-none"
+          data-bs-target="#wish"
           data-bs-toggle="offcanvas"
-          data-bs-target="#list"
           aria-controls="offcanvasBottom"
-        >
-          <svg
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            role="presentation"
-            focusable="false"
-          >
-            <path
-              d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
-            ></path>
-          </svg>
-        </div>
+          style="
+            height: 24px;
+            width: 24px;
+            fill: rgba(0, 0, 0, 0.5);
+            stroke: #fff;
+            stroke-width: 2;
+            overflow: visible;
+          "
+        ></Heart>
       </div>
+      <CreateWish></CreateWish>
       <Wish></Wish>
       <div>
         <RoomSwiper :roomPicture="room.picture[0]"></RoomSwiper>
@@ -70,24 +66,22 @@
           </div>
         </div>
         <div class="col-md-2 d-none d-md-block text-md-end">
-          <div
-            class="mdHeart"
-            data-bs-toggle="offcanvas"
+          <Heart
+            class="d-none d-md-block"
             data-bs-target="#mdWish"
+            data-bs-toggle="offcanvas"
             aria-controls="offcanvasBottom"
-          >
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-            >
-              <path
-                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
-              ></path>
-            </svg>
-          </div>
+            style="
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              padding: 10px;
+              fill: transparent;
+              stroke: #000;
+              stroke-width: 2;
+              overflow: visible;
+            "
+          ></Heart>
         </div>
       </div>
       <div class="row d-none d-md-block">
@@ -183,11 +177,15 @@
 import RoomSwiper from "./Swiper.vue";
 import PriceDetail from "./PriceDetail.vue";
 import Wish from "./Wish.vue";
+import CreateWish from "./CreateWish.vue";
+import Heart from "./Heart.vue";
 export default {
   components: {
     RoomSwiper,
     PriceDetail,
     Wish,
+    CreateWish,
+    Heart,
   },
   props: {
     rooms: { type: Object, required: true },

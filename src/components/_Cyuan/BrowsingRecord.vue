@@ -15,10 +15,13 @@
   </div>
 </template>
 <style lang="scss" scoped>
+* {
+  // border: 1px solid blue;
+}
 .record {
   padding-top: 30px;
-  outline: 1px solid blue;
-  overflow: hidden;
+  padding-right: 0;
+  // outline: 1px solid blue;
   .row:nth-of-type(1) {
     .col:nth-of-type(1) {
       padding-top: 0;

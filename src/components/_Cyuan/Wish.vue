@@ -2,7 +2,7 @@
   <div
     class="offcanvas offcanvas-bottom"
     tabindex="-1"
-    id="list"
+    id="wish"
     aria-labelledby="wishTitle"
   >
     <div class="offcanvas-header">

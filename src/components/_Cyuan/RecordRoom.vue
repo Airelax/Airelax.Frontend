@@ -8,25 +8,20 @@
     <div class="row">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
-        <!-- heart 功能外觀一併 寫成component -->
-        <div
-          class="heart ms-auto d-none d-md-block"
+        <Heart
+          class="d-none d-md-block"
+          data-bs-target="#mdCreateWish"
           data-bs-toggle="offcanvas"
-          data-bs-target="#mdList"
           aria-controls="offcanvasBottom"
-        >
-          <svg
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            role="presentation"
-            focusable="false"
-          >
-            <path
-              d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
-            ></path>
-          </svg>
-        </div>
+          style="
+            height: 24px;
+            width: 24px;
+            fill: rgba(0, 0, 0, 0.5);
+            stroke: #fff;
+            stroke-width: 2;
+            overflow: visible;
+          "
+        ></Heart>
       </div>
       <Wish></Wish>
       <div><RoomSwiper :roomPicture="room.picture[0]"></RoomSwiper></div>
@@ -99,7 +94,7 @@
     color: #000;
   }
   .eachRoomCol {
-    padding-right: 10px;
+    padding: 10px 10px 10px 0;
     position: relative;
     bottom: 20px;
     .row {
@@ -118,16 +113,6 @@
           border: 1px solid transparent;
           border-radius: 5px;
           padding: 3px 8px;
-        }
-        .heart {
-          svg {
-            height: 24px;
-            width: 24px;
-            fill: rgba(0, 0, 0, 0.5);
-            stroke: rgb(255, 255, 255);
-            stroke-width: 2;
-            overflow: visible;
-          }
         }
       }
     }
@@ -191,8 +176,6 @@
     }
   }
 }
-@media screen and(min-width:768px) {
-}
 </style>
 
 
@@ -200,11 +183,13 @@
 import RoomSwiper from "./Swiper.vue";
 import PriceDetail from "./PriceDetail.vue";
 import Wish from "./Wish.vue";
+import Heart from "./Heart.vue";
 export default {
   components: {
     RoomSwiper,
     PriceDetail,
     Wish,
+    Heart,
   },
   props: ["rooms", "nightCount"],
   methods: {
