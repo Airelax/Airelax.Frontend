@@ -35,6 +35,8 @@
 h1 {
   color: #fff;
   font-size: 26px;
+  text-align: left;
+  width: 70%;
 }
 
 @media screen and (min-width: 768px) {

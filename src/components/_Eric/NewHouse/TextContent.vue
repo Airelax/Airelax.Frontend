@@ -3,10 +3,10 @@
     <div class="item">
       <h2>{{ title }}</h2>
       <div class="content">
-        <textarea maxlength="50" rows="10" v-model="message"></textarea>
+        <textarea :maxlength="textLimit" rows="10" v-model="message"></textarea>
         <div>
           <span>{{ message.length }}</span
-          >/<span>50</span>
+          >/<span>{{ textLimit }}</span>
         </div>
       </div>
     </div>
@@ -70,6 +70,10 @@ export default {
   props: {
     title: {
       type: String,
+    },
+    textLimit: {
+      type: Number,
+      default: 50,
     },
   },
 };

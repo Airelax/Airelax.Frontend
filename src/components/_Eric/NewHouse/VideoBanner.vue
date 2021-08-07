@@ -53,6 +53,8 @@ h1 {
   font-weight: 900;
   font-size: 26px;
   z-index: 1;
+  text-align: left;
+  width: 70%;
 }
 
 @media screen and (min-width: 768px) {

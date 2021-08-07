@@ -24,7 +24,9 @@
 #nav {
   padding: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  box-sizing: border-box;
 
   a {
     margin: 0 5px;

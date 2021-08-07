@@ -251,6 +251,43 @@ export default {
             img: require('@/assets/pic/rent_page/FireExtinguisher.svg'),
             tag: "safety"
         },
-
+    ],
+    houseHighlight: [
+        {
+            name: 'Peaceful',
+            chinese: '寧靜',
+            mapping: '1',
+            img: require('@/assets/pic/rent_page/Peaceful.svg')
+        },
+        {
+            name: 'Unique',
+            chinese: '獨具特色',
+            mapping: '2',
+            img: require('@/assets/pic/rent_page/Unique.svg')
+        },
+        {
+            name: 'FamilyFriendly',
+            chinese: '適合家庭入住',
+            mapping: '3',
+            img: require('@/assets/pic/rent_page/FamilyFriendly.svg')
+        },
+        {
+            name: 'Stylish',
+            chinese: '風格十足',
+            mapping: '4',
+            img: require('@/assets/pic/rent_page/Stylish.svg')
+        },
+        {
+            name: 'Central',
+            chinese: '位於市中心',
+            mapping: '5',
+            img: require('@/assets/pic/rent_page/Central.svg')
+        },
+        {
+            name: 'Spacious',
+            chinese: '寬敞',
+            mapping: '6',
+            img: require('@/assets/pic/rent_page/Spacious.svg')
+        },
     ]
 }

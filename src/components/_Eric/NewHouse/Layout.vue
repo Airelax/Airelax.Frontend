@@ -6,7 +6,10 @@
     <div v-else class="rent-banner">
       <Banner :title="title"></Banner>
     </div>
-    <div class="rent-content">
+    <div
+      :class="isVideoBanner ? 'video-rent-content' : ''"
+      class="rent-content"
+    >
       <Content :notFirst="notFirst">
         <slot></slot>
       </Content>
@@ -35,6 +38,10 @@
   border-radius: 20px 20px 0 0;
   position: relative;
   box-sizing: border-box;
+}
+
+.video-rent-content {
+  height: 50vh;
 }
 
 .viedo-banner {

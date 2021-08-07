@@ -23,6 +23,7 @@
   width: 100%;
   position: relative;
   display: block;
+  height: 100%;
 }
 
 .content {
@@ -36,6 +37,7 @@
   bottom: 0;
   border-top: 1px solid #000;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
