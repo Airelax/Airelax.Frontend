@@ -115,10 +115,8 @@ export default {
                         color: #ff385c;
                     }
                 }
-
-                
-            
             }
+            
             .linkItemText{
                     a{
                         display: block;
