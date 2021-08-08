@@ -47,6 +47,9 @@ export default {
 <style scoped lang="scss">
 .cardTemplate{
     padding: 48px 0;
+    h2{
+        
+    }
     .rooms{
         padding: auto;
         display: flex;
