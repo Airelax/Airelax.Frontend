@@ -1,6 +1,6 @@
 <template>
   <div class="item">
-    <button>
+    <button :class="{ active: isActive }" @click="choose">
       <div class="icon"><img :src="highlight.img" alt="" /></div>
       <div class="info">{{ highlight.chinese }}</div>
     </button>
@@ -16,13 +16,18 @@
     border-radius: 32px;
     display: flex;
     box-sizing: border-box;
-    border: 1px solid rgb(176, 176, 176);
+    border: 2px solid rgb(176, 176, 176);
     background-color: #fff;
     padding: 0 16px;
     margin: 0;
     align-items: center;
     line-height: 24px;
     font-weight: 600;
+
+    &.active,
+    &:hover {
+      border: 2px solid #000;
+    }
   }
 
   .info {
@@ -45,9 +50,12 @@ export default {
     highlight: {
       type: Object,
     },
+    isActive: { type: Boolean },
   },
-  mounted() {
-    console.log(this.highlight);
+  methods: {
+    choose: function () {
+      this.$emit("selected", this.highlight.mapping);
+    },
   },
 };
 </script>

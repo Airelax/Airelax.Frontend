@@ -1,5 +1,5 @@
 <template>
-  <button @click="choose">
+  <button :class="{ active: isActive }" @click="choose">
     <div class="item">
       <div class="all-center">
         <div class="title">{{ houseType.chinese }}</div>
@@ -26,16 +26,23 @@
     text-align: left;
   }
 }
+
+.active {
+  border: 2px solid #000;
+  background-color: #fff;
+}
 </style>
 
 <script>
 export default {
   props: {
-    houseType: () => {},
+    houseType: { type: Object },
+    isActive: { type: Boolean },
   },
-
-  mounted() {
-    console.log(this.houseType);
+  methods: {
+    choose: function () {
+      this.$emit("selected", this.houseType.mapping);
+    },
   },
 };
 </script>

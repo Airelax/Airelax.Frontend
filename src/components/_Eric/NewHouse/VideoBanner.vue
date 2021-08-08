@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="banner"
-    style="backgroundcolor: red"
-    v-bind:style="{ backgroundImage: 'url(' + image + ')' }"
-  >
+  <div class="banner">
+    <img :src="image" alt="" />
     <div class="logo">
       <img src="https://picsum.photos/50/50/?random=1" />
     </div>
@@ -19,7 +16,15 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
   &::after {
     content: "";
     top: 0;
@@ -29,7 +34,7 @@
     margin: auto;
     background-color: rgba($color: #000000, $alpha: 0.5);
     position: absolute;
-    z-index: -1;
+    z-index: -2;
   }
   .content {
     height: 100%;

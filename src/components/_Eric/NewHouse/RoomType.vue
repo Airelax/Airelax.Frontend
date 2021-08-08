@@ -1,5 +1,5 @@
 <template>
-  <button @click="choose">
+  <button :class="{ active: isActive }" @click="choose">
     <div class="item">
       <div>
         {{ roomType.chinese }}
@@ -64,6 +64,7 @@ button {
 
   &.active {
     border-color: #000;
+    background-color: #fff;
   }
 }
 </style>
@@ -73,6 +74,12 @@ export default {
   props: {
     roomType: {
       type: Object,
+    },
+    isActive: { type: Boolean },
+  },
+  methods: {
+    choose: function () {
+      this.$emit("selected", this.roomType.mapping);
     },
   },
 };

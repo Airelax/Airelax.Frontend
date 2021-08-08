@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import c from "./Eric/SetPrice.vue";
+import c from "./Eric/ChooseHouseHightlight.vue";
 export default {
   components: {
     c,

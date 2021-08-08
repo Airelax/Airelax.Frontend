@@ -1,8 +1,8 @@
 <template>
-  <button @click="choose">
+  <button :class="{ active: isActive }" @click="choose">
     <div class="item">
-      <span v-text="houseType.chinese"></span>
-      <div class="cover"><img :src="houseType.img" /></div>
+      <span v-text="houseCategory.chinese"></span>
+      <div class="cover"><img :src="houseCategory.img" /></div>
     </div>
   </button>
 </template>
@@ -62,6 +62,7 @@ button {
 
   &.active {
     border-color: #000;
+    background-color: #fff;
   }
 }
 </style>
@@ -70,7 +71,13 @@ button {
 <script>
 export default {
   props: {
-    houseType: () => {},
+    houseCategory: { type: Object },
+    isActive: { type: Boolean },
+  },
+  methods: {
+    choose: function () {
+      this.$emit("selected", this.houseCategory.mapping);
+    },
   },
 };
 </script>

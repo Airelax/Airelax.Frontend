@@ -5,6 +5,8 @@
         v-for="highlight in highlights"
         :key="highlight.mapping"
         :highlight="highlight"
+        @selected="selected"
+        :isActive="values.includes(highlight.mapping)"
       ></Hightlight>
     </div>
   </div>
@@ -35,10 +37,20 @@ export default {
   data() {
     return {
       highlights: setting.houseHighlight,
+      values: [],
     };
   },
   components: {
     Hightlight,
+  },
+  methods: {
+    selected: function (mapping) {
+      if (!this.values.includes(mapping)) this.values.push(mapping);
+
+      if (this.values.length > 2) this.values = this.values.slice(-2);
+
+      this.$emit("selected", mapping);
+    },
   },
 };
 </script>

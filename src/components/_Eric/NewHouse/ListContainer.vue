@@ -24,5 +24,11 @@ ul {
 
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      value: 0,
+    };
+  },
+};
 </script>
