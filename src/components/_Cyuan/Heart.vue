@@ -13,27 +13,6 @@
     </svg>
   </div>
 </template>
-<style lang="scss">
-// .heart {
-//   svg {
-//     height: 24px;
-//     width: 24px;
-//     fill: rgba(0, 0, 0, 0.5);
-//     stroke: rgb(255, 255, 255);
-//     stroke-width: 2;
-//     overflow: visible;
-//   }
-// }
-
-// @media screen and (min-width: 768px) {
-//   .heart {
-//       svg:hover {
-//       background-color: #efefef80;
-//     }
-//   }
-// }
-</style>
-
 <script>
 export default {};
 </script>

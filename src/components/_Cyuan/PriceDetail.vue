@@ -1,9 +1,11 @@
 <template>
   <div
-    class="offcanvas offcanvas-bottom"
+    class="offcanvas offcanvas-bottom d-md-none"
     tabindex="-1"
     id="detail"
     aria-labelledby="detailTitle"
+    v-for="price in prices"
+    :key="price.index"
   >
     <div class="offcanvas-header">
       <button
@@ -90,11 +92,10 @@
 
 <script>
 export default {
-  props: ["prices", "nightCount", "sweetPrices"],
-  methods: {
-    console(a) {
-      console.log(a);
-    },
+  props: { prices: Object, nightCount: Number, sweetPrices: Number },
+  methods: {},
+  mounted() {
+    console.log(this.prices);
   },
 };
 </script>

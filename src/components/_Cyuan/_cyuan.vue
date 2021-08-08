@@ -68,9 +68,8 @@
         <div class="col-md-2 d-none d-md-block text-md-end">
           <Heart
             class="d-none d-md-block"
+            data-bs-toggle="modal"
             data-bs-target="#mdWish"
-            data-bs-toggle="offcanvas"
-            aria-controls="offcanvasBottom"
             style="
               width: 45px;
               height: 45px;
@@ -119,7 +118,7 @@
           / 晚
         </div>
         <div class="total d-md-flex">
-          <div class="mdComment d-none d-md-inline-flex">
+          <div class="mdComment d-none d-md-inline-flex align-items-center">
             <svg
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
@@ -220,9 +219,6 @@ export default {
         feeTotal
       ).toLocaleString();
     },
-  },
-  mounted() {
-    // console.log(this.room.picture);
   },
 };
 </script>

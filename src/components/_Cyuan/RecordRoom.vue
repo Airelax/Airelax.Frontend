@@ -10,9 +10,8 @@
         <div class="perfect me-auto">超讚房東</div>
         <Heart
           class="d-none d-md-block"
-          data-bs-target="#mdCreateWish"
-          data-bs-toggle="offcanvas"
-          aria-controls="offcanvasBottom"
+          data-bs-target="#mdWish"
+          data-bs-toggle="modal"
           style="
             height: 24px;
             width: 24px;
@@ -221,9 +220,6 @@ export default {
         feeTotal
       ).toLocaleString();
     },
-  },
-  mounted() {
-    console.log(this.room.picture);
   },
 };
 </script>
