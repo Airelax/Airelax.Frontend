@@ -1,21 +1,31 @@
 <template>
-  <div class="user">
-    <img src="https://picsum.photos/56/56/?random=1" />
-    <div class="item">
-      <span>{{ msg.name }}</span>
-      <span>{{ msg.date }}</span>
-    </div>
-  </div>
-  <div class="massage">
-    <p>{{ msg.content }}</p>
-    <div class="allMsg">
-      <span><u>顯示更多內容</u></span>
+  <div class="my-row" v-for="item in com" :key="item.id">
+    <div class="box">
+      <div class="user">
+        <img src="https://picsum.photos/56/56/?random=1" />
+        <div class="item">
+          <span>{{ item.name }}</span>
+          <span>{{ item.date }}</span>
+        </div>
+      </div>
+      <div class="massage">
+        <p>{{ item.content }}</p>
+        <div class="allMsg">
+          <span><u>顯示更多內容</u></span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-
-<style lang="scss" scoped>
+<style scoped>
+.my-row {
+  color: #222;
+  padding: 0 8px;
+}
+.my-row:nth-child(6) {
+  margin-right: 24px;
+}
 .user {
   display: flex;
   margin-bottom: 12px;
@@ -44,8 +54,9 @@
   text-align: initial;
 }
 .massage p {
+  font-size: 14px;
   text-align: justify;
-  margin-bottom: 0;
+  margin-bottom: 32px;
 }
 .allMsg {
   cursor: pointer;
@@ -74,23 +85,43 @@
   left: 11px;
 }
 @media screen and (min-width: 768px) {
+  .my-row {
+    height: 132px;
+    border: none;
+    margin-right: 0;
+  }
+  .my-row:nth-child(6) {
+    margin-right: 0;
+  }
+  .box {
+    width: 100%;
+  }
   .user img {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
   }
   .item {
     margin: auto 0;
   }
 }
 @media screen and (min-width: 1200px) {
+  .my-row {
+    width: 100%;
+    height: 96px;
+    margin-bottom: 46px;
+  }
   .user {
     margin-bottom: 16px;
+  }
+  .user img {
+    width: 56px;
+    height: 56px;
   }
 }
 </style>
 
 <script>
 export default {
-  props: ["msg"],
+  props: ["com"],
 };
 </script>
