@@ -98,7 +98,7 @@ export default {
     },
   },
   mounted() {
-    console.log("在pricedetail裡的price" + this.price);
+    console.log("在Recordpricedetail裡的price" + this.price);
     console.log(this.price);
   },
 };

@@ -19,13 +19,13 @@
 .swiper-container {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,9 +35,6 @@
   display: block;
   width: 100%;
   height: 100%;
-
-  border: 1px solid #aaa;
-  border-radius: 15px;
 }
 
 .swiper-container {

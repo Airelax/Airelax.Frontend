@@ -38,14 +38,14 @@
     }
   }
   .row:nth-of-type(2) {
-    height: 480px;
+    height: auto;
     overflow: hidden;
     padding: 6px;
     .scroll {
       display: flex;
       flex-wrap: nowrap;
       overflow-x: scroll;
-      height: 498px;
+      height: 500px;
     }
   }
 }
@@ -63,6 +63,9 @@ export default {
   components: {
     RecordRoom,
   },
-  props: ["rooms", "nightCount"],
+  props: {
+    rooms: { type: Object },
+    nightCount: { type: Number },
+  },
 };
 </script>

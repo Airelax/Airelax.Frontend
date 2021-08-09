@@ -54,7 +54,9 @@
     </div>
     <div class="row">
       <div class="originAndSweet">
-        <span class="origin"> $ {{ convertToLocaleString(room.Price) }} </span>
+        <span class="origin">
+          $ {{ convertToLocaleString(room.Price.origin) }}
+        </span>
         <span class="sweetPrice">
           $
           {{ plusServiceFee(room.Price, nightCount) }}
@@ -62,23 +64,39 @@
         </span>
         / 晚
       </div>
-      <div class="total d-md-flex">
+      <div class="total">
         <div
-          class="totalLink"
+          class="totalLink d-md-none"
           data-bs-toggle="offcanvas"
-          data-bs-target="#mdDetail"
+          data-bs-target="#detail"
           aria-controls="offcanvasBottom"
+          v-on:click="deliver(room.Price)"
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
         </div>
+        <div
+          class="mdTotalLink d-none d-md-block"
+          id="mdTotalLink"
+          data-bs-toggle="collapse"
+          href="#recordCollapse"
+          role="button"
+          aria-expanded="false"
+          aria-controls="recordCollapse"
+          v-on:click="deliverDataToDetail(room.Price)"
+        >
+          總計 ${{ getTotal(room.Price, nightCount) }} TWD
+          <MdRecordPriceDetail
+            :price="priceDetail"
+            :nightCount="nightCount"
+          ></MdRecordPriceDetail>
+        </div>
       </div>
-      <PriceDetail
-        :sweetPrices="room.Price.sweetPrice"
-        :prices="room.Price"
-        :nightCount="nightCount"
-      ></PriceDetail>
     </div>
   </div>
+  <RecordPriceDetail
+    :price="price"
+    :nightCount="nightCount"
+  ></RecordPriceDetail>
 </template>
 
 <style lang="scss" scoped>
@@ -163,12 +181,14 @@
         }
       }
       .total {
-        .totalLink {
+        .totalLink,
+        .mdTotalLink {
           font-size: 15px;
           text-decoration: underline;
           color: #717171;
         }
-        .totalLink:hover {
+        .totalLink:hover,
+        .mdTotalLink:hover {
           text-decoration: underline #000;
         }
       }
@@ -179,21 +199,32 @@
 
 
 <script>
+import MdRecordPriceDetail from "./MdRecordPriceDetail.vue";
 import RoomSwiper from "./Swiper.vue";
-import PriceDetail from "./PriceDetail.vue";
+import RecordPriceDetail from "./RecordPriceDetail.vue";
 import Wish from "./Wish.vue";
 import Heart from "./Heart.vue";
 export default {
   components: {
     RoomSwiper,
-    PriceDetail,
+    RecordPriceDetail,
+    MdRecordPriceDetail,
     Wish,
     Heart,
   },
-  props: ["rooms", "nightCount"],
+  data() {
+    return {
+      priceDetail: null,
+    };
+  },
+
+  props: {
+    rooms: { type: Object },
+    nightCount: { type: Number },
+  },
   methods: {
     convertToLocaleString(price) {
-      return price.origin.toLocaleString();
+      return price.toLocaleString();
     },
     plusServiceFee(price, nightCount) {
       return Math.round(
@@ -203,22 +234,23 @@ export default {
     },
     getTotal(price, nightCount) {
       let feeTotal;
+      let sweetprice = price.sweetPrice;
       let cleanFee = price.Fee.CleanFee;
       let taxFee = price.Fee.taxFee;
       let serviceFee = price.Fee.ServiceFee;
-      if (!!cleanFee && !!taxFee)
+      if (cleanFee && taxFee && serviceFee) {
         feeTotal = Number(cleanFee) + Number(serviceFee) + Number(taxFee);
-      else if (cleanFee && !!taxFee)
-        feeTotal = Number(serviceFee) + Number(cleanFee);
-      else if (!!cleanFee && taxFee)
-        feeTotal = Number(taxFee) + Number(serviceFee);
-      else {
+      } else if (!cleanFee && !taxFee && !serviceFee) {
         feeTotal = Number(serviceFee);
+      } else if (cleanFee && !taxFee && serviceFee) {
+        feeTotal = Number(serviceFee) + Number(cleanFee);
+      } else if (!cleanFee && taxFee && serviceFee) {
+        feeTotal = Number(taxFee) + Number(serviceFee);
       }
-      return (
-        Number(price.sweetPrice) * nightCount +
-        feeTotal
-      ).toLocaleString();
+      return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
+    },
+    deliverDataToDetail(price) {
+      this.priceDetail = price;
     },
   },
 };

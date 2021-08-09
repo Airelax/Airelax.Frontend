@@ -108,7 +108,7 @@
       <div class="row">
         <div class="originAndSweet text-md-end">
           <span class="origin">
-            $ {{ convertToLocaleString(room.Price) }}
+            $ {{ convertToLocaleString(room.Price.origin) }}
           </span>
           <span class="sweetPrice">
             $
@@ -141,7 +141,6 @@
           <div
             class="totalLink d-md-none"
             id="todetail"
-            type="button"
             data-bs-target="#detail"
             data-bs-toggle="offcanvas"
             aria-controls="offcanvasBottom"
@@ -155,15 +154,29 @@
             }}
             稅{{ room.Price.Fee.taxFee }}
           </div>
-          <div class="mdTotalLink d-none d-md-inline ms-md-auto">
+          <div
+            class="btn mdTotalLink d-none d-md-inline ms-md-auto"
+            id="mdTotalLink"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            v-on:click="deliverDataToDetail(room.Price)"
+          >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
+            <MdPriceDetail
+              :price="priceDetail"
+              :nightCount="nightCount"
+            ></MdPriceDetail>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <PriceDetail :price="priceDetail"></PriceDetail>
-</template>
+
+  <PriceDetail :price="priceDetail" :nightCount="nightCount"></PriceDetail>
+</template>  
 
 
 <style lang="scss" scoped>
@@ -175,6 +188,7 @@
 <script>
 import RoomSwiper from "./Swiper.vue";
 import PriceDetail from "./PriceDetail.vue";
+import MdPriceDetail from "./MdPriceDetail.vue";
 import Wish from "./Wish.vue";
 import CreateWish from "./CreateWish.vue";
 import Heart from "./Heart.vue";
@@ -182,6 +196,7 @@ export default {
   components: {
     RoomSwiper,
     PriceDetail,
+    MdPriceDetail,
     Wish,
     CreateWish,
     Heart,
@@ -197,7 +212,7 @@ export default {
   },
   methods: {
     convertToLocaleString(price) {
-      return price.origin.toLocaleString();
+      return price.toLocaleString();
     },
     plusServiceFee(price, nightCount) {
       return Math.round(
