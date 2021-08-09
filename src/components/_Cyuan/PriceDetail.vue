@@ -1,7 +1,5 @@
 <template>
-  <h1>123{{ price }}</h1>
-  <!-- {{ price.sweetPrice }} -->
-  <!-- <div
+  <div
     class="offcanvas offcanvas-bottom d-md-none"
     tabindex="-1"
     id="detail"
@@ -16,7 +14,7 @@
       ></button>
       <p class="offcanvas-title" id="detailTitle">價格明細</p>
     </div>
-    <div class="offcanvas-body small" >
+    <div v-if="price" class="offcanvas-body small">
       <div class="calTotal">
         <p>測試甜甜元件{{ price.sweetPrice }}</p>
         <p></p>
@@ -36,7 +34,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -83,16 +81,7 @@ export default {
   props: {
     price: {
       type: Object,
-      default: () => {
-        return {
-          sweetPrice: 0,
-          Fee: { CleanFee: 0, ServiceFee: 0, taxFee: 0 },
-        };
-      },
     },
-  },
-  mounted() {
-    console.log(this.price);
   },
 };
 </script>

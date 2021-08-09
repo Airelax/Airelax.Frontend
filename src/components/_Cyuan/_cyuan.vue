@@ -145,8 +145,7 @@
             data-bs-target="#detail"
             data-bs-toggle="offcanvas"
             aria-controls="offcanvasBottom"
-            @click="deliverDataToDetail"
-            :obj="room"
+            v-on:click="deliverDataToDetail(room.Price)"
           >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD 甜{{
               room.Price.sweetPrice
@@ -160,12 +159,10 @@
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
           </div>
         </div>
-        <div v-if="isShow === true">
-          <PriceDetail :price="priceDetail"></PriceDetail>
-        </div>
       </div>
     </div>
   </div>
+  <PriceDetail :price="priceDetail"></PriceDetail>
 </template>
 
 
@@ -191,11 +188,7 @@ export default {
   },
   data() {
     return {
-      priceDetail: {
-        // sweetPrice: 0,
-        // Fee: { CleanFee: 0, ServiceFee: 0, taxFee: 0 },
-      },
-      isShow: false,
+      priceDetail: null,
     };
   },
   props: {
@@ -229,9 +222,8 @@ export default {
       }
       return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
     },
-    deliverDataToDetail(e) {
-      this.priceDetail = e.target.getAttribute("obj");
-      this.isShow = true;
+    deliverDataToDetail(price) {
+      this.priceDetail = price;
     },
   },
 };
