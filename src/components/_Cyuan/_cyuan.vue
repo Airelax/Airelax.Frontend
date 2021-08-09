@@ -165,16 +165,12 @@
             v-on:click="deliverDataToDetail(room.Price)"
           >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
-            <MdPriceDetail
-              :price="priceDetail"
-              :nightCount="nightCount"
-            ></MdPriceDetail>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <MdPriceDetail :price="priceDetail" :nightCount="nightCount"></MdPriceDetail>
   <PriceDetail :price="priceDetail" :nightCount="nightCount"></PriceDetail>
 </template>  
 

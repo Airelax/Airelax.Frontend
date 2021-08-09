@@ -4,7 +4,8 @@
       <button
         type="button"
         class="btn-close text-reset"
-        data-bs-dismiss="collapse"
+        data-bs-toggle="collapse"
+        href="#collapseExample"
         aria-label="Close"
       ></button>
       <div class="title mx-auto">價格明細</div>

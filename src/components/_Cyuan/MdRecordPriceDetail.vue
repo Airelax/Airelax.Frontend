@@ -4,7 +4,8 @@
       <button
         type="button"
         class="btn-close text-reset"
-        data-bs-dismiss="collapse"
+        data-bs-toggle="collapse"
+        href="#recordCollapse"
         aria-label="Close"
       ></button>
       <div class="title mx-auto">價格明細</div>
@@ -53,7 +54,6 @@
   border-radius: 18px;
   z-index: 18;
   width: 280px;
-  bottom: 220px;
   .header {
     padding: 10px 20px;
     color: #000;
