@@ -100,6 +100,12 @@
     margin-bottom: 32px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .ranks {
+    height: 250px;
+  }
+}
 </style>
 
 <script>
