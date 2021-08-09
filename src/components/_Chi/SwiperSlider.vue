@@ -1,6 +1,6 @@
 <template>
     <div>
-        Swiper
+        <!-- Swiper -->
     </div>
 </template>
 
