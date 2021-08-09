@@ -66,7 +66,6 @@
             data-bs-toggle="modal"
             data-bs-target="#mdCreateWish"
             data-bs-dismiss="modal"
-            @click="linkToCreateWish"
           >
             <div class="col-3">
               <img
@@ -175,9 +174,6 @@
 }
 </style>
 
-
 <script>
-export default {
-  methods: {},
-};
+export default {};
 </script>

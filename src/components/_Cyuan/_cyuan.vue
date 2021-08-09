@@ -140,26 +140,29 @@
           </div>
           <div
             class="totalLink d-md-none"
-            data-bs-toggle="offcanvas"
+            id="todetail"
+            type="button"
             data-bs-target="#detail"
-            aria-controls="offcanvasBottom"
-          >
-            總計 ${{ getTotal(room.Price, nightCount) }} TWD
-          </div>
-          <div
-            class="mdTotalLink d-none d-md-inline ms-md-auto"
             data-bs-toggle="offcanvas"
-            data-bs-target="#mdDetail"
             aria-controls="offcanvasBottom"
+            @click="deliverDataToDetail"
+            :obj="room"
           >
+            總計 ${{ getTotal(room.Price, nightCount) }} TWD 甜{{
+              room.Price.sweetPrice
+            }}
+            清潔{{ room.Price.Fee.CleanFee }} 服務{{
+              room.Price.Fee.ServiceFee
+            }}
+            稅{{ room.Price.Fee.taxFee }}
+          </div>
+          <div class="mdTotalLink d-none d-md-inline ms-md-auto">
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
           </div>
         </div>
-        <PriceDetail
-          :sweetPrices="room.Price.sweetPrice"
-          :prices="room.Price"
-          :nightCount="nightCount"
-        ></PriceDetail>
+        <div v-if="isShow === true">
+          <PriceDetail :price="priceDetail"></PriceDetail>
+        </div>
       </div>
     </div>
   </div>
@@ -186,8 +189,17 @@ export default {
     CreateWish,
     Heart,
   },
+  data() {
+    return {
+      priceDetail: {
+        // sweetPrice: 0,
+        // Fee: { CleanFee: 0, ServiceFee: 0, taxFee: 0 },
+      },
+      isShow: false,
+    };
+  },
   props: {
-    rooms: { type: Object, required: true },
+    rooms: { type: Object },
     nightCount: { type: Number },
   },
   methods: {
@@ -202,22 +214,24 @@ export default {
     },
     getTotal(price, nightCount) {
       let feeTotal;
+      let sweetprice = price.sweetPrice;
       let cleanFee = price.Fee.CleanFee;
       let taxFee = price.Fee.taxFee;
       let serviceFee = price.Fee.ServiceFee;
-      if (!!cleanFee && !!taxFee)
+      if (cleanFee && taxFee && serviceFee) {
         feeTotal = Number(cleanFee) + Number(serviceFee) + Number(taxFee);
-      else if (cleanFee && !!taxFee)
-        feeTotal = Number(serviceFee) + Number(cleanFee);
-      else if (!!cleanFee && taxFee)
-        feeTotal = Number(taxFee) + Number(serviceFee);
-      else {
+      } else if (!cleanFee && !taxFee && !serviceFee) {
         feeTotal = Number(serviceFee);
+      } else if (cleanFee && !taxFee && serviceFee) {
+        feeTotal = Number(serviceFee) + Number(cleanFee);
+      } else if (!cleanFee && taxFee && serviceFee) {
+        feeTotal = Number(taxFee) + Number(serviceFee);
       }
-      return (
-        Number(price.sweetPrice) * nightCount +
-        feeTotal
-      ).toLocaleString();
+      return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
+    },
+    deliverDataToDetail(e) {
+      this.priceDetail = e.target.getAttribute("obj");
+      this.isShow = true;
     },
   },
 };

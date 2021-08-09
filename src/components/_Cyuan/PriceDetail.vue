@@ -1,11 +1,11 @@
 <template>
-  <div
+  <h1>123{{ price }}</h1>
+  <!-- {{ price.sweetPrice }} -->
+  <!-- <div
     class="offcanvas offcanvas-bottom d-md-none"
     tabindex="-1"
     id="detail"
     aria-labelledby="detailTitle"
-    v-for="price in prices"
-    :key="price.index"
   >
     <div class="offcanvas-header">
       <button
@@ -16,35 +16,27 @@
       ></button>
       <p class="offcanvas-title" id="detailTitle">價格明細</p>
     </div>
-    <div class="offcanvas-body small">
+    <div class="offcanvas-body small" >
       <div class="calTotal">
-        <p>${{ prices.sweetPrice }} x {{ nightCount }}晚</p>
-        <p>${{ prices.sweetPrice * nightCount }}</p>
+        <p>測試甜甜元件{{ price.sweetPrice }}</p>
+        <p></p>
       </div>
-      <div class="row list">
-        <div class="col">
-          <div
-            class="row"
-            v-for="feeName in Object.keys(prices.Fee)"
-            :key="feeName.index"
-          >
-            <p v-if="feeName == 'CleanFee'">清潔費</p>
-            <p v-if="feeName == 'ServiceFee'">服務費</p>
-            <p v-if="feeName == 'taxFee'">稅額</p>
-          </div>
+      <div class="fees">
+        <div class="clean">
+          <p>清潔費</p>
+          <p>{{ price.Fee.CleanFee }}</p>
         </div>
-        <div class="col">
-          <div
-            class="row fee text-end"
-            v-for="fee in prices.Fee"
-            :key="fee.index"
-          >
-            <p>${{ fee }}</p>
-          </div>
+        <div class="service">
+          <p>服務費</p>
+          <p>{{ price.Fee.ServiceFee }}</p>
+        </div>
+        <div class="tax">
+          <p>稅額</p>
+          <p>{{ price.Fee.taxFee }}</p>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped>
@@ -73,18 +65,14 @@
   .offcanvas-body {
     font-size: 15px;
     padding: 20px;
-    .calTotal {
+    .calTotal,
+    .clean,
+    .service,
+    .tax {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       letter-spacing: 1px;
-    }
-    .list {
-      .col {
-        .fee {
-          text-align: end;
-        }
-      }
     }
   }
 }
@@ -92,10 +80,19 @@
 
 <script>
 export default {
-  props: { prices: Object, nightCount: Number, sweetPrices: Number },
-  methods: {},
+  props: {
+    price: {
+      type: Object,
+      default: () => {
+        return {
+          sweetPrice: 0,
+          Fee: { CleanFee: 0, ServiceFee: 0, taxFee: 0 },
+        };
+      },
+    },
+  },
   mounted() {
-    console.log(this.prices);
+    console.log(this.price);
   },
 };
 </script>
