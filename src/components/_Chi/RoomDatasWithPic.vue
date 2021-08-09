@@ -2,7 +2,7 @@
   <div class="cardTemplate">
     <h2>住宿地點</h2>
 
-    <!-- <div class="rooms">
+    <div class="rooms">
                 <div class="roomCards" v-for="(room, index) in roomDatas" :key="room.id">
                     <div class="card" style="width: 18rem;">
                         <img :src="room.picture" class="card-img-top roomPic" alt="...">
@@ -12,8 +12,8 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
-    <Carousel
+            </div>
+    <!-- <Carousel
       :per-page="1"
       :perPageCustom="[
         [576, 1],
@@ -37,7 +37,7 @@
           </div>
         </div>
       </Slide>
-    </Carousel>
+    </Carousel> -->
   </div>
 </template>
 
@@ -79,31 +79,31 @@ export default {
   padding: 48px 0;
   h2 {
   }
-  // .rooms{
-  //     padding: auto;
-  //     display: flex;
-  //     flex-direction: row;
-  //     width: 100%;
-  //     overflow: hidden;
+  .rooms{
+      padding: auto;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: hidden;
 
-  //     .roomCards{
-  //         padding: 8px;
+      .roomCards{
+          padding: 8px;
 
-  //         .card{
-  //             cursor: pointer;
-  //             border:none;
-  //             width: 100%;
-  //             .roomPic{
-  //                 width: 100%;
-  //                 border-top-right-radius: 10px;
-  //                 border-top-left-radius: 10px;
-  //             }
+          .card{
+              cursor: pointer;
+              border:none;
+              width: 100%;
+              .roomPic{
+                  width: 100%;
+                  border-top-right-radius: 10px;
+                  border-top-left-radius: 10px;
+              }
 
-  //             .card-body{
+              .card-body{
 
-  //             }
-  //         }
-  //     }
-  // }
+              }
+          }
+      }
+  }
 }
 </style>
