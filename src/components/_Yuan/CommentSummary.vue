@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <div class="icon"></div>
+    <i class="fas fa-star"></i>
     <h2>
       <div v-if="data.rank">
         {{ data.rank.star }}．{{ data.comments.length }}則評價
@@ -14,11 +14,10 @@
 .title {
   display: flex;
   align-items: baseline;
-  .icon {
-    width: 16px;
-    height: 16px;
-    background-color: red;
-    margin-right: 8px;
+  align-items: center;
+  i{
+    color: #FF385C;
+    margin-right: 1rem;
   }
   h2 {
     font-size: 22px;

@@ -107,10 +107,8 @@
                 </div>
             
                    <!-- sticky -->
-            
-            <div class="comments">
-               <div class="txt">Comments</div>
-            </div>
+        
+            <Comment @Show="CommentShow"></Comment>
 
             <Location :detail="data.Location" v-if="fullWidth > 768"></Location>
 
@@ -197,7 +195,7 @@
                             <DatePicker v-if="isDatePickerShow && Object.keys(pickDate).length === 0 && Object.keys(outpass).length === 0" @update="updateChoice"></DatePicker>
                         </keep-alive>
                         <Cancel v-if="isDatePickerShow && (Object.keys(pickDate).length !== 0 || Object.keys(outpass).length !== 0)"></Cancel>
-                        <Comment></Comment>
+                        <CommentModal v-if="isCommentShow"></CommentModal>
                     </div>
                     <div class="modal-footer d-flex flex-row justify-content-between" v-if="isConnectShow">
                         <p>有其他疑問嗎？</p>
@@ -226,6 +224,8 @@ import People from '../components/_Howard/People';
 import AllPicture from '../components/_Howard/AllPicture';
 import DatePicker from '../components/_Howard/DatePicker';
 import Cancel from '../components/_Howard/Cancel';
+import Comment from '../components/_Howard/Comment';
+import CommentModal from '../components/_Howard/ModalComment';
 
 export default {
   data(){
@@ -241,6 +241,7 @@ export default {
         isPeopleShow: false,
         isPicShow: false,
         isDatePickerShow: false,
+        isCommentShow: false,
         fullWidth: 0,
         fullHeight: 0,
         pickDate:{},
@@ -270,6 +271,7 @@ export default {
           this.isPeopleShow = false;
           this.isPicShow = false;
           this.isDatePickerShow = false;
+          this.isCommentShow = false;
       },
       updateChoice(val) {
           this.pickDate = val;
@@ -279,6 +281,9 @@ export default {
       },
       sameVal(val){
           this.samepass = val;
+      },
+      CommentShow(val){
+          this.isCommentShow = val;
       }
   },
   watch:{
@@ -307,7 +312,9 @@ export default {
       People,
       AllPicture,
       DatePicker,
-      Cancel
+      Cancel,
+      Comment,
+      CommentModal
   }
 }
 </script>

@@ -19,6 +19,7 @@
 .user {
   display: flex;
   margin-bottom: 12px;
+  align-items: center;
 }
 .user img {
   width: 45px;
@@ -27,7 +28,6 @@
 }
 .item {
   padding-left: 12px;
-  margin: 0;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -35,10 +35,12 @@
 .item span:nth-child(1) {
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: .2rem;
 }
 .item span:nth-child(2) {
   color: #717171;
   font-size: 14px;
+  margin-top: .2rem;
 }
 .massage {
   text-align: initial;
@@ -46,6 +48,7 @@
 .massage p {
   text-align: justify;
   margin-bottom: 0;
+  line-height: 1.5rem;
 }
 .allMsg {
   cursor: pointer;
