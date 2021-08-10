@@ -31,7 +31,6 @@
       <div class="btn">建立</div>
     </div>
   </div>
-
   <!-- 768px以上 含768px -->
   <!-- Modal -->
   <div
@@ -73,36 +72,40 @@
 </template>
 
 <style lang="scss" scoped>
-.form-floating {
-  .form-control {
-    border-radius: 10px;
+/*共用開頭 */
+* {
+  font-family: "Noto Sans TC", sans-serif;
+  .form-floating {
+    .form-control {
+      border-radius: 10px;
+    }
+    .form-control:link {
+      border: 1px solid #616161;
+    }
+    .form-control:focus {
+      border: 2px solid #000;
+    }
   }
-  .form-control:link {
-    border: 1px solid #616161;
+  .maxLength {
+    font-size: 12px;
+    text-align: start;
+    font-weight: 200;
+    padding-left: 5px;
+    padding-top: 5px;
+    color: #5f5f5f;
   }
-  .form-control:focus {
-    border: 2px solid #000;
+  .btn-close {
+    color: #000;
+    opacity: 1;
+    border-radius: 50%;
+    font-size: 12px;
+  }
+  .btn-close:hover {
+    background-color: #efefef80;
   }
 }
-.maxLength {
-  font-size: 12px;
-  text-align: start;
-  font-weight: 200;
-  padding-left: 5px;
-  padding-top: 5px;
-  color: #5f5f5f;
-}
-
-.btn-close {
-  color: #000;
-  opacity: 1;
-  border-radius: 50%;
-  font-size: 12px;
-}
-.btn-close:hover {
-  background-color: #efefef80;
-}
-
+/*共用結尾 */
+//768px以下offcanvas
 .offcanvas {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -133,7 +136,7 @@
     }
   }
 }
-
+//768px以上modal
 .modal {
   .modal-dialog {
     .modal-content {
@@ -170,7 +173,6 @@
   }
 }
 </style>
-
 
 <script>
 export default {};

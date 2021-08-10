@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="col-12 col-md-4 eachRoomCol"
-    type="button"
-    v-for="room in rooms"
-    :key="room.id"
-  >
+  <div class="col-12 col-md-4 eachRoomCol" type="button">
     <div class="row">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
@@ -74,10 +69,6 @@
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
         </div>
-        <MdRecordPriceDetail
-          :price="priceDetail"
-          :nightCount="nightCount"
-        ></MdRecordPriceDetail>
         <div
           class="mdTotalLink d-none d-md-block"
           id="mdTotalLink"
@@ -90,13 +81,13 @@
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
         </div>
+        <MdRecordPriceDetail
+          :price="priceDetail"
+          :nightCount="nightCount"
+        ></MdRecordPriceDetail>
       </div>
     </div>
   </div>
-  <RecordPriceDetail
-    :price="priceDetail"
-    :nightCount="nightCount"
-  ></RecordPriceDetail>
 </template>
 
 <style lang="scss" scoped>
@@ -201,13 +192,11 @@
 <script>
 import MdRecordPriceDetail from "./MdRecordPriceDetail.vue";
 import RoomSwiper from "./Swiper.vue";
-import RecordPriceDetail from "./RecordPriceDetail.vue";
 import Wish from "./Wish.vue";
 import Heart from "./Heart.vue";
 export default {
   components: {
     RoomSwiper,
-    RecordPriceDetail,
     MdRecordPriceDetail,
     Wish,
     Heart,
@@ -219,7 +208,7 @@ export default {
   },
 
   props: {
-    rooms: { type: Object },
+    room: { type: Object },
     nightCount: { type: Number },
   },
   methods: {
@@ -251,6 +240,7 @@ export default {
     },
     deliverDataToDetail(price) {
       this.priceDetail = price;
+      this.$emit("pricedetail", price);
     },
   },
 };

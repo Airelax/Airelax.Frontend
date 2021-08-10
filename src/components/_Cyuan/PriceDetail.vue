@@ -44,6 +44,9 @@
 </template>
 
 <style lang="scss" scoped>
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
 .offcanvas {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;

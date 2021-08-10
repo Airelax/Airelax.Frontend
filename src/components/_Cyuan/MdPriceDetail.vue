@@ -1,5 +1,9 @@
 <template>
-  <div v-if="price" class="collapse position-absolute" id="mdPriceDetail">
+  <div
+    v-if="price && fullWidth >= 768"
+    class="collapse position-absolute"
+    id="mdPriceDetail"
+  >
     <div class="header d-flex align-items-center">
       <button
         type="button"
@@ -113,6 +117,24 @@ export default {
       }
       return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
     },
+  },
+    data() {
+      return {
+        fullWidth: 0,
+        fullHeight: 0,
+      };
+    },
+  watch: {
+    fullWidth(val) {
+      this.fullWidth = val;
+    },
+  },
+  mounted() {
+    const vm = this;
+    this.fullWidth = document.body.clientWidth;
+    window.addEventListener("resize", function () {
+      vm.fullWidth = document.body.clientWidth;
+    });
   },
 };
 </script>

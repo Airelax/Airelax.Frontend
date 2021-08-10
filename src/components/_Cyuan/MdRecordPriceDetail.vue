@@ -1,5 +1,9 @@
 <template>
-  <div v-if="price" class="position-absolute" id="mdRecordPriceDetail">
+  <div
+    v-if="price && fullWidth >= 768"
+    class="position-absolute"
+    id="mdRecordPriceDetail"
+  >
     <div class="header d-flex align-items-center">
       <button
         type="button"
@@ -47,6 +51,12 @@
 * {
   // border: 1px solid blue;
 }
+@media screen and(max-width:768px) {
+  .position-absolute {
+    display: none;
+  }
+}
+
 .position-absolute {
   border: 0.5px solid #ededed;
   box-shadow: 0px 1px 15px 0.5px #aaa;
@@ -54,7 +64,7 @@
   border-radius: 18px;
   z-index: 18;
   width: 250px;
-  bottom: 220px;
+  bottom: 310px;
   .header {
     padding: 10px 20px;
     color: #000;
@@ -115,6 +125,24 @@ export default {
       }
       return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
     },
+  },
+  data() {
+    return {
+      fullWidth: 0,
+      fullHeight: 0,
+    };
+  },
+  watch: {
+    fullWidth(val) {
+      this.fullWidth = val;
+    },
+  },
+  mounted() {
+    const vm = this;
+    this.fullWidth = document.body.clientWidth;
+    window.addEventListener("resize", function () {
+      vm.fullWidth = document.body.clientWidth;
+    });
   },
 };
 </script>
