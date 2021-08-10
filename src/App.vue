@@ -9,7 +9,7 @@
     <router-link to="/howard">Howard</router-link> |
     <router-link to="/yuan">Yuan</router-link> |
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
