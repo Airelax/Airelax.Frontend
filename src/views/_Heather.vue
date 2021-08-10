@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col-6">
-      <div class="text-start m-md-4">
+    <div class="col-md-6 col-12">
+      <div class="text-start m-md-4 px-3">
         <p>
           {{ RoomCount }}多間住宿 · {{ StartDate }} - {{ EndDate }} ·
           {{ TravelerCount }}位房客
@@ -532,9 +532,15 @@
           </div>
         </div>
 
-        <div class="onlybtn ">
+        <div class="onlybtn">
           <button
-            class="btn btn-primary"
+            class="filters
+                border border-1
+                bg-white
+                py-2 px-3 mb-3
+                text-dark
+                btn-white
+                rounded-pill"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasBottom"
@@ -836,40 +842,52 @@
                 </div>
               </div>
         </div>
+        <div class="my-3 ms-3 fs-6">顯示「{{}}」的搜尋結果</div>
       </div>
 
       <div class="RoomType">
         <!-- 柔全部份 -->
       </div>
+      <div class="page d-flex justify-content-center ">
+          <nav aria-label="Page navigation example d-block">
+            <ul class="pagination rounded-circle ">
+              <li class="page-item"><a class="page-link text-dark border border-white" href="#"><i class="fas fa-angle-left"></i></a></li>
+              <li class="page-item"><a class="page-link text-dark rounded-circle border border-white" href="#">1</a></li>
+              <li class="page-item"><a class="page-link text-dark rounded-circle border border-white" href="#">2</a></li>
+              <li class="page-item"><a class="page-link text-dark rounded-circle border border-white" href="#">3</a></li>
+              <li class="page-item"><a class="page-link text-dark rounded-circle border border-white" href="#">4</a></li>
+              <li class="page-item"><a class="page-link text-dark rounded-circle border border-white" href="#">5</a></li>
+              <li class="page-item"><a class="page-link text-dark border border-white" href="#"><i class="fas fa-angle-right"></i></a></li>
+            </ul>
+          </nav>
+      </div>
+      <div>1-{{PageNum}}共{{RoomNums}}間住宿</div>
+      <div class="my-4 text-secondary ">需要支付額外費用。可能會加收稅費。</div>
 
-      <!-- <div id="app">
-  <ul class="pagination">
-    <li class="page-item" @click.prevent><a class="page-link" href>&lt;</a></li>
-    <li class="page-item" v-for="page in 10" @click.prevent>
-      <a class="page-link" href>{{ page }}</a>
-    </li>
-    <li class="page-item" @click.prevent><a class="page-link" href>&gt;</a></li>
-  </ul>
-</div> -->
 
-      <div class="text-start  record w-100"> 
-        <h3>近期瀏覽紀錄</h3>
+
+
+
+
+      <div class="text-start  record  px-3"> 
+        <h3 class="">近期瀏覽紀錄</h3>
         <p>這些房源在你目前搜尋日期的前後 1 天內可供預訂</p>
       </div>
-
-
     </div>
-    <div class="col-6">
+
+
+    <div class="col-md-6 col-12">
       <div class="d-none d-md-block">
         <!-- <img src="../assets/pic/map.jpg" alt="" class="w-100 h-100" /> -->
+        MAP
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
 export default {
-  name: "Heather",
   data() {
     return {
       TypeOfPlace: [
@@ -1016,7 +1034,8 @@ export default {
 // @import "../assets/_Heather.scss";
 .record{
       background-color: #f7f7f7;
-    }
+  }
+
 @media screen and (max-width: 749px) {
   .onlybtn{
     .checkbtn{
@@ -1030,6 +1049,7 @@ export default {
         background-color: #717171;
         border-color: #717171;
         box-shadow: 3px 3px 5px #cccccc;
+        
       }
     }
     .bed{
@@ -1055,7 +1075,6 @@ export default {
       
     }
     }
-    
   }
 }
 @media screen and (min-width: 750px) {
