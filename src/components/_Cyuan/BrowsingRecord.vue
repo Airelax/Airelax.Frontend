@@ -9,17 +9,7 @@
     </div>
     <div class="row">
       <div class="scroll">
-        <RecordRoom
-          v-for="room in rooms"
-          :key="room.id"
-          :room="room"
-          :nightCount="nightCount"
-          @pricedetail="getprice"
-        ></RecordRoom>
-        <RecordPriceDetail
-          :price="pricedetail"
-          :nightCount="nightCount"
-        ></RecordPriceDetail>
+        <RecordRoom :rooms="rooms" :nightCount="nightCount"></RecordRoom>
       </div>
     </div>
   </div>
@@ -67,11 +57,9 @@
 }
 </style>
 <script>
-import RecordPriceDetail from "../_Cyuan/RecordPriceDetail.vue";
 import RecordRoom from "./RecordRoom.vue";
 export default {
   components: {
-    RecordPriceDetail,
     RecordRoom,
   },
   props: {
@@ -82,11 +70,6 @@ export default {
     return {
       pricedetail: null,
     };
-  },
-  methods: {
-    getprice(roomprice) {
-      this.pricedetail = roomprice;
-    },
   },
 };
 </script>

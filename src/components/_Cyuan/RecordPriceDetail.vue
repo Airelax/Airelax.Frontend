@@ -48,11 +48,11 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   height: auto;
+  color: #000;
   .offcanvas-header {
     border-bottom: 0.5px solid #ededed;
     padding: 20px;
     .btn-close {
-      color: #000;
       opacity: 1;
       font-size: 12px;
     }

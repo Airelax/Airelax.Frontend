@@ -48,6 +48,9 @@
   </div>
 </template>
 <style lang="scss" scoped>
+* {
+  font-family: "Noto Sans TC", sans-serif;
+}
 .position-absolute {
   border: 0.5px solid #ededed;
   box-shadow: 0px 1px 15px 0.5px #aaa;
@@ -58,13 +61,15 @@
   left: 480px;
   .header {
     color: #000;
-    padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 30px;
+    font-weight: 500;
     .btn-close {
       font-size: 12px;
       opacity: 1;
     }
   }
   .body {
+    font-weight: 400;
     border-top: 0.5px solid #ededed;
     padding-bottom: 10px;
     .row {
@@ -118,12 +123,12 @@ export default {
       return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
     },
   },
-    data() {
-      return {
-        fullWidth: 0,
-        fullHeight: 0,
-      };
-    },
+  data() {
+    return {
+      fullWidth: 0,
+      fullHeight: 0,
+    };
+  },
   watch: {
     fullWidth(val) {
       this.fullWidth = val;

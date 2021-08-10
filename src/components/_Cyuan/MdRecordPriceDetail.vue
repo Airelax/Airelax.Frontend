@@ -48,9 +48,6 @@
   </div>
 </template>
 <style lang="scss" scoped>
-* {
-  // border: 1px solid blue;
-}
 @media screen and(max-width:768px) {
   .position-absolute {
     display: none;
