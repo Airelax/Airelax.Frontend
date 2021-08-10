@@ -1,0 +1,15 @@
+.vc-container{
+  border: none;
+}
+.vc-day-content {
+  font-size: 1.1rem;
+}
+.vc-day{
+  padding: .5rem;
+}
+.vc-weekday{
+  font-size: 1.1rem;
+}
+.vc-title{
+  font-size: 1.2rem;
+}
