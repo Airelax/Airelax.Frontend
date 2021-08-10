@@ -109,10 +109,10 @@
 </style>
 
 <script>
-import CommentSummary from "../components/_Yuan/CommentSummary.vue";
-import setting from "../components/_Yuan/msgSetting";
-import Rank from "../components/_Yuan/Rank.vue";
-import Message from "../components/_Yuan/Message.vue";
+import CommentSummary from "./CommentSummary.vue";
+import setting from "./msgSetting";
+import Rank from "./Rank.vue";
+import Message from "./Message.vue";
 import axios from "axios";
 export default {
   components: {

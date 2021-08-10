@@ -8,9 +8,8 @@
     <router-link to="/heather">Heather</router-link> |
     <router-link to="/howard">Howard</router-link> |
     <router-link to="/yuan">Yuan</router-link> |
-    <router-link to="/yuan_modal">yuan_modal</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">

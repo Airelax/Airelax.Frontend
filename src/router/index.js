@@ -42,11 +42,6 @@ const routes = [
     name: 'Yuan',
     component: () => import('../views/_Yuan.vue')
   },
-  {
-    path: '/yuan_modal',
-    name: 'YuanM',
-    component: () => import('../views/CommentModal.vue')
-  },
 ]
 
 const router = createRouter({
