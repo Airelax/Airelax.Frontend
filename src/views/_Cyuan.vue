@@ -2,18 +2,7 @@
   <div class="container-md">
     <div class="row">
       <div class="col-12 col-xl-6" v-if="get">
-        <ResultRoom
-          v-for="room in rooms"
-          :key="room.id"
-          :room="room"
-          :nightCount="nightCount"
-          @pricedetail="getprice"
-        ></ResultRoom>
-        <PriceDetail
-          :price="pricedetail"
-          :nightCount="nightCount"
-        ></PriceDetail>
-
+        <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
         <BrowsingRecord
           :rooms="rooms"
           :nightCount="nightCount"
@@ -24,12 +13,10 @@
 </template>
 <script>
 import axios from "axios";
-import PriceDetail from "../components/_Cyuan/PriceDetail.vue";
-import ResultRoom from "../components/_Cyuan/_cyuan.vue";
+import ResultRoom from "../components/_Cyuan/ResultRoom.vue";
 import BrowsingRecord from "../components/_Cyuan/BrowsingRecord.vue";
 export default {
   components: {
-    PriceDetail,
     ResultRoom,
     BrowsingRecord,
   },
@@ -38,7 +25,6 @@ export default {
       rooms: Array,
       nightCount: 3,
       get: false,
-      pricedetail: null,
     };
   },
   created() {
@@ -50,12 +36,6 @@ export default {
         this.rooms = res.data;
         this.get = true;
       });
-  },
-  methods: {
-    getprice(roomprice) {
-      console.log(roomprice);
-      this.pricedetail = roomprice;
-    },
   },
 };
 </script>

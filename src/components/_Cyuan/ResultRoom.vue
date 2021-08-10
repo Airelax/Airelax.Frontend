@@ -1,5 +1,5 @@
 <template>
-  <div class="row eachRoom">
+  <div class="row eachRoom" v-for="room in rooms" :key="room.id">
     <div class="col-12 col-md-5">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
@@ -145,6 +145,7 @@
       </div>
     </div>
   </div>
+  <PriceDetail :price="priceDetail" :nightCount="nightCount"></PriceDetail>
 </template>  
 
 
@@ -157,6 +158,7 @@
 <script>
 import Star from "./Star.vue";
 import RoomSwiper from "./Swiper.vue";
+import PriceDetail from "./PriceDetail.vue";
 import MdPriceDetail from "./MdPriceDetail.vue";
 import Wish from "./Wish.vue";
 import CreateWish from "./CreateWish.vue";
@@ -165,6 +167,7 @@ export default {
   components: {
     Star,
     RoomSwiper,
+    PriceDetail,
     MdPriceDetail,
     Wish,
     CreateWish,
@@ -176,7 +179,7 @@ export default {
     };
   },
   props: {
-    room: { type: Object },
+    rooms: { type: Object },
     nightCount: { type: Number },
   },
   methods: {
@@ -208,7 +211,6 @@ export default {
     },
     deliverDataToDetail(price) {
       this.priceDetail = price;
-      this.$emit("pricedetail", price);
     },
   },
 };
