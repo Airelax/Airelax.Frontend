@@ -67,21 +67,25 @@
       <div class="total">
         <div
           class="totalLink d-md-none"
+          data-bs-target="#recordPriceDetail"
           data-bs-toggle="offcanvas"
-          data-bs-target="#detail"
           aria-controls="offcanvasBottom"
-          v-on:click="deliver(room.Price)"
+          v-on:click="deliverDataToDetail(room.Price)"
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
         </div>
+        <MdRecordPriceDetail
+          :price="priceDetail"
+          :nightCount="nightCount"
+        ></MdRecordPriceDetail>
         <div
           class="mdTotalLink d-none d-md-block"
           id="mdTotalLink"
           data-bs-toggle="collapse"
-          href="#recordCollapse"
+          href="#mdRecordPriceDetail"
           role="button"
           aria-expanded="false"
-          aria-controls="recordCollapse"
+          aria-controls="mdRecordPriceDetail"
           v-on:click="deliverDataToDetail(room.Price)"
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
@@ -89,13 +93,8 @@
       </div>
     </div>
   </div>
-  <MdRecordPriceDetail
-    :price="priceDetail"
-    :nightCount="nightCount"
-  ></MdRecordPriceDetail>
-
   <RecordPriceDetail
-    :price="price"
+    :price="priceDetail"
     :nightCount="nightCount"
   ></RecordPriceDetail>
 </template>

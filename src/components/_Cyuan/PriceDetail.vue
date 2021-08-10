@@ -2,8 +2,8 @@
   <div
     class="offcanvas offcanvas-bottom d-md-none"
     tabindex="-1"
-    id="detail"
-    aria-labelledby="detailTitle"
+    id="PriceDetail"
+    aria-labelledby="PriceDetailTitle"
   >
     <div class="offcanvas-header">
       <button
@@ -12,7 +12,7 @@
         data-bs-dismiss="offcanvas"
         aria-label="Close"
       ></button>
-      <p class="offcanvas-title" id="detailTitle">價格明細</p>
+      <p class="offcanvas-title" id="PriceDetailTitle">價格明細</p>
     </div>
     <div v-if="price" class="offcanvas-body small">
       <div class="calTotal">
@@ -49,6 +49,7 @@
   border-top-right-radius: 12px;
   height: auto;
   .offcanvas-header {
+    color: #000;
     border-bottom: 0.5px solid #ededed;
     padding: 20px;
     .btn-close {
@@ -67,6 +68,7 @@
     }
   }
   .offcanvas-body {
+    color: #000;
     font-size: 15px;
     padding: 20px;
     .calTotal,
@@ -96,10 +98,6 @@ export default {
     convertToLocaleString(price) {
       return price.toLocaleString();
     },
-  },
-  mounted() {
-    console.log("在pricedetail裡的price" + this.price);
-    console.log(this.price);
   },
 };
 </script>

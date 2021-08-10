@@ -1,11 +1,11 @@
 <template>
-  <div v-if="price" class="position-absolute" id="recordCollapse">
+  <div v-if="price" class="position-absolute" id="mdRecordPriceDetail">
     <div class="header d-flex align-items-center">
       <button
         type="button"
         class="btn-close text-reset"
         data-bs-toggle="collapse"
-        href="#recordCollapse"
+        href="#mdRecordPriceDetail"
         aria-label="Close"
       ></button>
       <div class="title mx-auto">價格明細</div>
@@ -53,12 +53,14 @@
   background-color: #fff;
   border-radius: 18px;
   z-index: 18;
-  width: 280px;
+  width: 250px;
+  bottom: 220px;
   .header {
     padding: 10px 20px;
     color: #000;
     .btn-close {
       font-size: 12px;
+      opacity: 1;
     }
   }
   .body {

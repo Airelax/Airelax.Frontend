@@ -1,5 +1,5 @@
 <template>
-  <div class="row eachRoom" type="button" v-for="room in rooms" :key="room.id">
+  <div class="row eachRoom" v-for="room in rooms" :key="room.id">
     <div class="col-12 col-md-5">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
@@ -35,19 +35,7 @@
       <div class="row">
         <div class="col col-md-10">
           <div class="comment d-inline-flex d-md-none">
-            <svg
-              class="star"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-            >
-              <path
-                d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
+            <Star></Star>
             <span class="starScore" id="starScore">
               {{ room.comment.star }}
             </span>
@@ -119,18 +107,7 @@
         </div>
         <div class="total d-md-flex">
           <div class="mdComment d-none d-md-inline-flex align-items-center">
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-            >
-              <path
-                d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
+            <Star></Star>
             <span class="starScore fw-bold" id="starScore">
               {{ room.comment.star }}
             </span>
@@ -140,37 +117,35 @@
           </div>
           <div
             class="totalLink d-md-none"
-            id="todetail"
-            data-bs-target="#detail"
+            type="button"
+            data-bs-target="#PriceDetail"
             data-bs-toggle="offcanvas"
             aria-controls="offcanvasBottom"
             v-on:click="deliverDataToDetail(room.Price)"
           >
-            總計 ${{ getTotal(room.Price, nightCount) }} TWD 甜{{
-              room.Price.sweetPrice
-            }}
-            清潔{{ room.Price.Fee.CleanFee }} 服務{{
-              room.Price.Fee.ServiceFee
-            }}
-            稅{{ room.Price.Fee.taxFee }}
+            總計 ${{ getTotal(room.Price, nightCount) }} TWD
           </div>
           <div
             class="btn mdTotalLink d-none d-md-inline ms-md-auto"
             id="mdTotalLink"
-            data-bs-toggle="collapse"
-            href="#collapseExample"
             role="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mdPriceDetail"
             aria-expanded="false"
             aria-controls="collapseExample"
             v-on:click="deliverDataToDetail(room.Price)"
           >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
+            <MdPriceDetail
+              :price="priceDetail"
+              :nightCount="nightCount"
+            ></MdPriceDetail>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <MdPriceDetail :price="priceDetail" :nightCount="nightCount"></MdPriceDetail>
+
   <PriceDetail :price="priceDetail" :nightCount="nightCount"></PriceDetail>
 </template>  
 
@@ -182,6 +157,7 @@
 
 
 <script>
+import Star from "./Star.vue";
 import RoomSwiper from "./Swiper.vue";
 import PriceDetail from "./PriceDetail.vue";
 import MdPriceDetail from "./MdPriceDetail.vue";
@@ -190,6 +166,7 @@ import CreateWish from "./CreateWish.vue";
 import Heart from "./Heart.vue";
 export default {
   components: {
+    Star,
     RoomSwiper,
     PriceDetail,
     MdPriceDetail,

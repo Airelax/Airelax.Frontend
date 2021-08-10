@@ -2,8 +2,8 @@
   <div
     class="offcanvas offcanvas-bottom d-md-none"
     tabindex="-1"
-    id="detail"
-    aria-labelledby="detailTitle"
+    id="recordPriceDetail"
+    aria-labelledby="recordPriceDetailTitle"
   >
     <div class="offcanvas-header">
       <button
@@ -12,7 +12,7 @@
         data-bs-dismiss="offcanvas"
         aria-label="Close"
       ></button>
-      <p class="offcanvas-title" id="detailTitle">價格明細</p>
+      <p class="offcanvas-title" id="recordPriceDetailTitle">價格明細</p>
     </div>
     <div v-if="price" class="offcanvas-body small">
       <div class="calTotal">
@@ -96,10 +96,6 @@ export default {
     convertToLocaleString(price) {
       return price.toLocaleString();
     },
-  },
-  mounted() {
-    console.log("在Recordpricedetail裡的price" + this.price);
-    console.log(this.price);
   },
 };
 </script>
