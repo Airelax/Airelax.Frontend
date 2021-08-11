@@ -1,20 +1,38 @@
 <template>
   <div class="cardTemplate">
-    <h2>住宿地點</h2>
+    <h2><strong>住宿地點</strong></h2>
 
-    <div class="rooms">
-      <div class="roomCards" v-for="(room, index) in roomDatas" :key="room.id">
-        <div class="card" style="width: 18rem">
+    <swiper
+    :slides-per-view="2"
+    :watchSlidesProgress="true"
+    navigation
+    @swiper="onSwiper"
+    @slideChange="onSlideChange" 
+    class="rooms">
+
+      <swiper-slide class="roomCards col-6" v-for="(room, index) in roomDatas" :key="room.index">
+        <div class="card">
           <img :src="room.picture" class="card-img-top roomPic" alt="..." />
           <div class="card-body">
-            <p class="card-text1">臥室{{ index + 1 }}</p>
-            <p class="card-text2">{{ room.BedCount }}張{{ room.BedType }}</p>
+            <h3 class="card-text1"><strong>臥室{{ index + 1 }}</strong></h3>
+            <h4 class="card-text2">{{ room.BedCount }}張{{ room.BedType }}</h4>
           </div>
         </div>
-      </div>
+      </swiper-slide>
 
-      <div class="roomCards" v-for="(room, index) in roomDatas" :key="index">
-        <div class="card" style="width: 10rem" v-if="room.picture==null">
+     
+      
+    </swiper>
+
+    <swiper
+    :slides-per-view="3"
+    :space-between="1"
+    navigation
+    @swiper="onSwiper"
+    @slideChange="onSlideChange" 
+    class="rooms">
+       <swiper-slide class="roomCards roomCardsWithOutPic col-6" v-for="(room, index) in roomDatas" :key="room.index">
+        <div class="card">
           <div class="card-body">
             <div
               class="beds"
@@ -36,16 +54,12 @@
               </div>
             </div>
 
-            <p class="card-text1">臥室{{ index + 1 }}</p>
-            <p class="card-text2">{{ room.BedCount }}張{{ room.BedType }}</p>
+            <h3 class="card-text1"><strong>臥室{{ index + 1 }}</strong></h3>
+            <h4 class="card-text2">{{ room.BedCount }}張{{ room.BedType }}</h4>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="rooms">
-      
-    </div>
+      </swiper-slide>
+    </swiper>
     <!-- <Carousel
       :per-page="1"
       :perPageCustom="[
@@ -80,8 +94,19 @@ import axios from "axios";
 //import activeRoomCards from "activeRoomCards.vue"
 //import inactiveRoomCards from "inactiveRoomCards.vue"
 //import bedRoomSlideButtons from "bedRoomSlideButtons.vue"
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import {Swiper,SwiperSlide} from'swiper/vue';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+//import SwiperSlider from './SwiperSlider.vue';
 export default {
   components: {
+    Swiper,
+    SwiperSlide
+    //SwiperSlider
     //activeRoomCards,
     //inactiveRoomCards,
     //bedRoomSlideButtons
@@ -110,21 +135,20 @@ export default {
 .cardTemplate {
   padding: 48px 0;
   h2 {
+    text-align: start;
   }
   .rooms {
-    padding: auto;
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px;
+    
+    
+    
     .roomCards {
       padding: 8px;
 
       .card {
         cursor: pointer;
         border: none;
-        width: 100%;
+        
         justify-content: start;
         text-align: start;
         border: 1px solid black;
@@ -144,10 +168,23 @@ export default {
             .doubleBed{
               width: 24px;
             }
-
+          }
+          h3{
+            font-size: 16px;
+          }
+          h4{
+            font-size: 4px;
           }
         }
       }
+    }
+  }
+}
+@media screen and (min-width :768px) {
+  .cardTemplate{
+    max-width: 653px;
+    .roomCardsWithOutPic{
+      width: 33.333%;
     }
   }
 }
