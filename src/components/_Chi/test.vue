@@ -12,35 +12,17 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="rooms">
       <div class="roomCards" v-for="(room, index) in roomDatas" :key="index">
-        <div class="card" style="width: 10rem">
+        <div class="card" style="width: 10rem" v-if="room.picture==null">
           <div class="card-body">
             <div
               class="beds"
               v-for="(bed, index) in room.BedCount"
               :key="index"
             >
-              <div v-if="room.BedType == '單人床'">
-                <svg
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  role="presentation"
-                  focusable="false"
-                  style="
-                    display: block;
-                    height: 24px;
-                    width: 24px;
-                    fill: currentcolor;
-                  "
-                >
-                  <path
-                    d="M24 4a2 2 0 0 1 1.995 1.85L26 6v7.839l1.846 5.537a3 3 0 0 1 .115.468l.03.24.009.24V30h-2v-2H6v2H4v-9.675a3 3 0 0 1 .087-.717l.067-.232L6 13.836V6a2 2 0 0 1 1.697-1.977l.154-.018L8 4zm2 18H6v4h20zm-1.388-6H7.387l-1.333 4h19.891zM24 6H8v8h3v-4a2 2 0 0 1 1.85-1.995L13 8h6a2 2 0 0 1 1.995 1.85L21 10v4h3zm-5 4h-6v4h6z"
-                  />
-                </svg>
+              <div class="singleBed" v-if="room.BedType == '單人床'">
+                <img :src="require('@/assets/pic/bedWithoutPic/singleBed.svg')">
               </div>
             </div>
 
@@ -49,24 +31,8 @@
               v-for="(bed, index) in room.BedCount"
               :key="index"
             >
-              <div v-if="room.BedType == '雙人床'">
-                <svg
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  role="presentation"
-                  focusable="false"
-                  style="
-                    display: block;
-                    height: 24px;
-                    width: 24px;
-                    fill: currentcolor;
-                  "
-                >
-                  <path
-                    d="M26 4a2 2 0 0 1 1.995 1.85L28 6v7.839l1.846 5.537a3 3 0 0 1 .115.468l.03.24.009.24V30h-2v-2H4v2H2v-9.675a3 3 0 0 1 .087-.717l.067-.232L4 13.836V6a2 2 0 0 1 1.697-1.977l.154-.018L6 4zm2 18H4v4h24zm-1.388-6H5.387l-1.333 4h23.891zM26 6H6v8h2v-4a2 2 0 0 1 1.85-1.995L10 8h12a2 2 0 0 1 1.995 1.85L24 10v4h2zm-11 4h-5v4h5zm7 0h-5v4h5z"
-                  />
-                </svg>
+              <div class="doubleBed" v-if="room.BedType == '雙人床'">
+                <img  :src="require('@/assets/pic/bedWithoutPic/doubleBed.svg')">
               </div>
             </div>
 
@@ -75,6 +41,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="rooms">
+      
     </div>
     <!-- <Carousel
       :per-page="1"
@@ -168,6 +138,13 @@ export default {
         .card-body {
           .beds {
             display: inline-block;
+            .singleBed{
+              width: 24px;
+            }
+            .doubleBed{
+              width: 24px;
+            }
+
           }
         }
       }
