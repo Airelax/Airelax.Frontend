@@ -134,6 +134,17 @@ export default {
 <style scoped lang="scss">
 .cardTemplate {
   padding: 48px 0;
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 600;
+    background-color: #ffffff80;
+    padding: 14px;
+    border-radius: 50%;
+  }
   h2 {
     text-align: start;
   }
@@ -186,6 +197,8 @@ export default {
     .roomCardsWithOutPic{
       width: 33.333%;
     }
+
+    
   }
 }
 </style>
