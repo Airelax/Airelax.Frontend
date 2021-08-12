@@ -27,7 +27,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="comment d-inline-flex">
+        <div class="comment d-inline-flex my-1">
           <svg
             class="star"
             viewBox="0 0 32 32"
@@ -46,14 +46,14 @@
           </span>
           <span class="commentCount">({{ room.comment.TotalComments }})</span>
         </div>
-        <div class="typeAddress">{{ room.houseType }}．{{ room.address }}</div>
-        <div class="title">
+        <div class="typeAddress my-1">{{ room.houseType }}．{{ room.address }}</div>
+        <div class="title my-1">
           {{ room.Title }}
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="originAndSweet">
+      <div class="originAndSweet my-1">
         <span class="origin">
           $ {{ convertToLocaleString(room.Price.origin) }}
         </span>
@@ -64,7 +64,7 @@
         </span>
         / 晚
       </div>
-      <div class="total">
+      <div class="total my-1">
         <div
           class="totalLink d-md-none"
           data-bs-target="#recordPriceDetail"
@@ -74,22 +74,15 @@
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
         </div>
-        <div
-          class="mdTotalLink d-none d-md-block"
+        <a
+          class="btn mdTotalLink d-none d-md-inline ms-md-auto"
           id="mdTotalLink"
-          data-bs-toggle="collapse"
-          href="#mdRecordPriceDetail"
           role="button"
-          aria-expanded="false"
-          aria-controls="mdRecordPriceDetail"
+          data-bs-toggle="modal" data-bs-target="#myModal"
           v-on:click="deliverDataToDetail(room.Price)"
         >
           總計 ${{ getTotal(room.Price, nightCount) }} TWD
-          <MdRecordPriceDetail
-            :price="priceDetail"
-            :nightCount="nightCount"
-          ></MdRecordPriceDetail>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -97,7 +90,8 @@
     :price="priceDetail"
     :nightCount="nightCount"
   ></RecordPriceDetail>
-</template>
+  <MdPriceDetail :price="priceDetail" :nightCount="nightCount"></MdPriceDetail>
+</template>  
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
@@ -200,17 +194,19 @@
 
 <script>
 import RecordPriceDetail from "./RecordPriceDetail.vue";
-import MdRecordPriceDetail from "./MdRecordPriceDetail.vue";
+// import MdRecordPriceDetail from "./MdRecordPriceDetail.vue";
 import RoomSwiper from "./Swiper.vue";
 import Wish from "./Wish.vue";
 import Heart from "./Heart.vue";
+import MdPriceDetail from "./MdPriceDetail.vue";
 export default {
   components: {
     RecordPriceDetail,
     RoomSwiper,
-    MdRecordPriceDetail,
+    // MdRecordPriceDetail,
     Wish,
     Heart,
+    MdPriceDetail
   },
   data() {
     return {

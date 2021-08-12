@@ -1,13 +1,13 @@
 <template>
   <div class="record">
-    <div class="row">
-      <div class="col">
+    <div class="row ">
+      <div class="col p-0">
         <h3>近期瀏覽紀錄</h3>
         <p>已根據目前的搜尋條件更新日期與價格。</p>
       </div>
-      <div class="col d-none d-md-blocks navigation"></div>
+      <div class="col d-none d-md-blocks navigation p-0"></div>
     </div>
-    <div class="row">
+    <div class="row me-0">
       <div class="scroll">
         <RecordRoom :rooms="rooms" :nightCount="nightCount"></RecordRoom>
       </div>
@@ -28,17 +28,19 @@
         p {
           padding: 0 8px;
           text-align: start;
-          color: #000;
+          color: #717171;
         }
         h3 {
+          color: #000;
           font-weight: 700;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
         }
       }
     }
     .row:nth-of-type(2) {
-      height: 500px;
+      height: 400px;
       overflow: hidden;
-      padding: 6px;
       .scroll {
         display: flex;
         flex-wrap: nowrap;

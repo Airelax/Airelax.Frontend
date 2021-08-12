@@ -1,5 +1,5 @@
 <template>
-  <div class="row eachRoom" v-for="room in rooms" :key="room.id">
+  <div class="row eachRoom me-0" v-for="room in rooms" :key="room.id">
     <div class="col-12 col-md-5">
       <div class="label d-flex position-relative">
         <div class="perfect me-auto">超讚房東</div>
@@ -30,11 +30,12 @@
         d-md-flex
         flex-md-column
         justify-content-md-between
+        my-1
       "
     >
       <div class="row">
-        <div class="col col-md-10">
-          <div class="comment d-inline-flex d-md-none">
+        <div class="col col-md-10 ">
+          <div class="comment d-inline-flex d-md-none my-1">
             <Star></Star>
             <span class="starScore" id="starScore">
               {{ room.comment.star }}
@@ -43,13 +44,13 @@
               >({{ room.comment.TotalComments }})</span
             >
           </div>
-          <div class="typeAddress d-md-none">
+          <div class="typeAddress d-md-none my-1">
             {{ room.houseType }}．{{ room.address }}
           </div>
-          <div class="mdTypeAddress d-none d-md-block">
+          <div class="mdTypeAddress d-none d-md-block ">
             位於{{ room.address }}的{{ room.houseType }}
           </div>
-          <div class="title">
+          <div class="title my-1">
             {{ room.Title }}
           </div>
         </div>
@@ -71,7 +72,7 @@
           ></Heart>
         </div>
       </div>
-      <div class="row d-none d-md-block">
+      <div class="row d-none d-md-block ">
         <div class="space">
           <span v-if="room.Space.CustomerNumber" class="customer">
             {{ room.Space.CustomerNumber }}位．</span
@@ -94,7 +95,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="originAndSweet text-md-end">
+        <div class="originAndSweet text-md-end my-1">
           <span class="origin">
             $ {{ convertToLocaleString(room.Price.origin) }}
           </span>
@@ -116,7 +117,7 @@
             >
           </div>
           <div
-            class="totalLink d-md-none"
+            class="totalLink d-md-none my-1"
             type="button"
             data-bs-target="#PriceDetail"
             data-bs-toggle="offcanvas"
@@ -125,27 +126,21 @@
           >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
           </div>
-          <div
+          <a
             class="btn mdTotalLink d-none d-md-inline ms-md-auto"
             id="mdTotalLink"
             role="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mdPriceDetail"
-            aria-expanded="false"
-            aria-controls="collapseExample"
+            data-bs-toggle="modal" data-bs-target="#myModal"
             v-on:click="deliverDataToDetail(room.Price)"
           >
             總計 ${{ getTotal(room.Price, nightCount) }} TWD
-          </div>
-          <MdPriceDetail
-            :price="priceDetail"
-            :nightCount="nightCount"
-          ></MdPriceDetail>
+          </a>
         </div>
       </div>
     </div>
   </div>
   <PriceDetail :price="priceDetail" :nightCount="nightCount"></PriceDetail>
+  <MdPriceDetail :price="priceDetail" :nightCount="nightCount"></MdPriceDetail>
 </template>  
 
 
@@ -210,7 +205,7 @@ export default {
       return (Number(sweetprice) * nightCount + feeTotal).toLocaleString();
     },
     deliverDataToDetail(price) {
-      this.priceDetail = price;
+      this.priceDetail = price
     },
   },
 };

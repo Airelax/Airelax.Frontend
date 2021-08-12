@@ -2,7 +2,7 @@
   <div class="container-md">
     <div class="row">
       <div class="col-12 col-xl-6" v-if="get">
-        <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
+          <ResultRoom :rooms="rooms" :nightCount="nightCount"></ResultRoom>
         <BrowsingRecord
           :rooms="rooms"
           :nightCount="nightCount"
