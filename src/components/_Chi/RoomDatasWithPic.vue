@@ -6,8 +6,7 @@
     :slides-per-view="2"
     :watchSlidesProgress="true"
     navigation
-    @swiper="onSwiper"
-    @slideChange="onSlideChange" 
+    
     class="rooms">
 
       <swiper-slide class="roomCards col-6" v-for="(room, index) in roomDatas" :key="room.index">
@@ -60,40 +59,12 @@
         </div>
       </swiper-slide>
     </swiper>
-    <!-- <Carousel
-      :per-page="1"
-      :perPageCustom="[
-        [576, 1],
-        [768, 2],
-        [1024, 4],
-      ]"
-      :mouse-drag="true"
-      :navigationEnabled="windowWidth >= 576 ? true : false"
-      class="carousel-custom rooms"
-    >
-      <Slide
-        
-        v-for="(room, index) in roomDatas"
-        :key="index"
-      >
-        <div class="card" style="width: 18rem">
-          <img :src="room.picture" class="card-img-top roomPic" alt="..." />
-          <div class="card-body">
-            臥室{{ index + 1 }}
-            <p class="card-text2">{{ room.BedCount }}張{{ room.BedType }}</p>
-          </div>
-        </div>
-      </Slide>
-    </Carousel> -->
+    
   </div>
 </template>
 
 <script>
 import axios from "axios";
-
-//import activeRoomCards from "activeRoomCards.vue"
-//import inactiveRoomCards from "inactiveRoomCards.vue"
-//import bedRoomSlideButtons from "bedRoomSlideButtons.vue"
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import {Swiper,SwiperSlide} from'swiper/vue';
 import 'swiper/swiper.scss';
@@ -101,15 +72,10 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-//import SwiperSlider from './SwiperSlider.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide
-    //SwiperSlider
-    //activeRoomCards,
-    //inactiveRoomCards,
-    //bedRoomSlideButtons
   },
   data: function () {
     return {
