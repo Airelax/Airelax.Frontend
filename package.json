@@ -16,8 +16,10 @@
     "popper.js": "^1.16.1",
     "v-calendar": "^3.0.0-alpha.5",
     "swiper": "^6.8.1",
+    "v3-carousel": "^1.1.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue3-carousel": "^0.1.24",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
