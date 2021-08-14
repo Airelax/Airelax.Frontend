@@ -1,15 +1,12 @@
 <template>
-    <div id="banner"></div>
     <div class="head">
-        <Navbar v-if="fullWidth>768"></Navbar>
-        <SearchBar @hider="hideBody"></SearchBar>
-        <RwdNavbar v-if="fullWidth<768 && isRwdShow"></RwdNavbar>
+      <SearchBar></SearchBar>
       <div class="kanban">
         <span>由奧運與帕運會選手舉辦的線上體驗</span>
         <button class="goTo">立即瀏覽</button>
       </div>
     </div>
-    <div class="body" v-if="isShow">
+    <div class="body" v-if="$store.state.isBodyShow">
       <div class="around">
         <h2>探索周邊</h2>
         <div class="scrollbar">
@@ -17,32 +14,32 @@
             <div class="yuan-row">
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around.png" />
+                  <div class="item mx-lg-2">
                     <span>台北</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around2.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around2.png" />
+                  <div class="item mx-lg-2">
                     <span>台南</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around3.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around3.png" />
+                  <div class="item mx-lg-2">
                     <span>高雄</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around4.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around4.png" />
+                  <div class="item mx-lg-2">
                     <span>桃園</span><span>00分鐘車程</span>
                   </div>
                 </a>
@@ -51,32 +48,32 @@
             <div class="yuan-row">
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around5.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around5.png" />
+                  <div class="item mx-lg-2">
                     <span>新北市</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around6.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around6.png" />
+                  <div class="item mx-lg-2">
                     <span>花蓮</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around7.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around7.png" />
+                  <div class="item mx-lg-2">
                     <span>台東市</span><span>00分鐘車程</span>
                   </div>
                 </a>
               </div>
               <div class="around-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/around8.png" alt="" />
-                  <div class="item">
+                  <img src="../assets/image/Home/around8.png" />
+                  <div class="item mx-lg-2">
                     <span>恆春</span><span>00分鐘車程</span>
                   </div>
                 </a>
@@ -98,25 +95,25 @@
             <div class="yuan-row">
               <div class="family-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/family.png" alt="" />
+                  <img src="../assets/image/Home/family.png" />
                   <span>戶外度假勝地</span>
                 </a>
               </div>
               <div class="family-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/family2.png" alt="" />
+                  <img src="../assets/image/Home/family2.png" />
                   <span>獨特房源</span>
                 </a>
               </div>
               <div class="family-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/family3.png" alt="" />
+                  <img src="../assets/image/Home/family3.png" />
                   <span>整套房源</span>
                 </a>
               </div>
               <div class="family-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/family4.png" alt="" />
+                  <img src="../assets/image/Home/family4.png" />
                   <span>可攜帶寵物</span>
                 </a>
               </div>
@@ -131,19 +128,19 @@
             <div class="yuan-row">
               <div class="fun-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/haveFun.png" alt="" /> <span>體驗</span
+                  <img src="../assets/image/Home/haveFun.png" /> <span>體驗</span
                   ><span class="item">尋找附近的難忘體驗。</span>
                 </a>
               </div>
               <div class="fun-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/haveFun2.png" alt="" /> <span>線上體驗</span
+                  <img src="../assets/image/Home/haveFun2.png" /> <span>線上體驗</span
                   ><span class="item">由體驗達人舉辦的互動式直播體驗。</span>
                 </a>
               </div>
               <div class="fun-div">
                 <a href="#">
-                  <img src="../components/Airbnb/image/haveFun3.png" alt="" />
+                  <img src="../assets/image/Home/haveFun3.png" />
                   <span>精選系列：浪跡天涯</span
                   ><span class="item">參加線上體驗，安坐家中暢遊全世界。</span>
                 </a>
@@ -160,55 +157,55 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
 </template>
 
 <script>
-import SearchBar from '../components/Airbnb/SearchBar';
-import RwdNavbar from '../components/Airbnb/RwdNavbar';
-import Navbar from '../components/Airbnb/Navbar';
-import Footer from '../components/Airbnb/Footer';
+import SearchBar from '../components/Home/SearchBar';
 export default {
-    data(){
-        return{
-            isShow: true,
-            isRwdShow: true,
-            fullWidth: 0,
-        }
-    },
-    watch:{
-      fullWidth(val){
-          this.fullWidth = val;
-      }
-    },
     components:{
-        SearchBar,
-        RwdNavbar,
-        Navbar,
-        Footer
+        SearchBar
     },
     methods:{
-        hideBody(val){
-            this.isShow = val
+      change(){
+        let mix = document.querySelector('.mix');
+        let minSearch = document.querySelector('.min_search');
+        let register = document.getElementById('register');
+        if (top!==null && mix !== null && minSearch !== null){
+            mix.classList.add('homeStyle');
+            minSearch.classList.add('d-none');
+            register.classList.add('toggle');
+            window.addEventListener("scroll", function() {
+                let top = document.documentElement.scrollTop; 
+                minSearch.classList.remove('d-none');
+                if(top>100){
+                  mix.classList.remove('homeStyle');
+                  minSearch.classList.remove('d-none');
+                  register.classList.remove('toggle');
+                }
+                else{
+                  mix.classList.add('homeStyle');
+                  minSearch.classList.add('d-none');
+                  register.classList.add('toggle');
+                }
+          });
         }
+      }
+    },
+    computed:{
+      getWidth(){
+        return this.$store.state.fullWidth;
+      }
+    },
+    watch:{
+      getWidth(){
+        this.change();
+      }
     },
     mounted(){
         const vm = this;
-        this.fullWidth = document.body.clientWidth;
-        window.addEventListener("resize", function() {
-            vm.fullWidth = document.body.clientWidth;
-        });
-        window.addEventListener("scroll", function(){
-            let cHeight = document.documentElement.clientHeight;
-            let sHeight = document.documentElement.scrollHeight;
-            let sTop = document.documentElement.scrollTop;
-            if(sHeight <= cHeight+ sTop +200){
-              vm.isRwdShow = false
-              vm.$forceUpdate()
-            }
-            else{
-              vm.isRwdShow = true
-            }
+        vm.change();
+        window.addEventListener("scroll",function(){
+          vm.change();
         })
     }
 }
@@ -220,7 +217,6 @@ export default {
 body * {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
     "Helvetica Neue", sans-serif;
-  /*outline: 1px solid red;*/
   text-align: left;
 }
 body::-webkit-scrollbar {
@@ -247,7 +243,7 @@ body::-webkit-scrollbar {
 .head {
   height: 125.132vw;
   background-size: cover;
-  background-image: url(../components/Airbnb/image/Kanban.png);
+  background-image: url(../assets/image/Home/Kanban.png);
   position: relative;
 }
 .notice {
@@ -298,7 +294,6 @@ body::-webkit-scrollbar {
   text-align: center;
   line-height: 0 !important;
 }
-/**/
 .body {
   padding: 15vw 7.5vw;
 }
@@ -351,10 +346,9 @@ body::-webkit-scrollbar {
 .around .around-div .item span:nth-child(2) {
   font-weight: normal;
 }
-/**/
 .dontWorry {
   height: 86.875vw;
-  background-image: url(../components/Airbnb/image/dontWorry.png);
+  background-image: url(../assets/image/Home/dontWorry.png);
   background-size: cover;
   border-radius: 5vw;
   margin: 15vw 0;
@@ -372,7 +366,6 @@ body::-webkit-scrollbar {
   margin: 5vw auto 0;
   display: block;
 }
-/**/
 .family .yuan-row {
   padding-top: 5vw;
 }
@@ -392,7 +385,6 @@ body::-webkit-scrollbar {
   margin-top: 2.5vw;
   display: block;
 }
-/**/
 .haveFun {
   margin: 15vw 0;
 }
@@ -421,10 +413,9 @@ body::-webkit-scrollbar {
   font-weight: normal;
   margin-top: 1.25vw;
 }
-/**/
 .rent {
   height: 25rem;
-  background-image: url(../components/Airbnb/image/rent.png);
+  background-image: url(../assets/image/Home/rent.png);
   background-size: cover;
   border-radius: 5vw;
   padding: 10vw;
@@ -446,7 +437,7 @@ body::-webkit-scrollbar {
   margin: 4.6875vw auto 0;
   display: block;
 }
-/**/
+
 @media screen and (min-width: 768px) {
   .notice {
     height: 7.554vw;
@@ -463,7 +454,7 @@ body::-webkit-scrollbar {
   }
   .head {
     height: 76.948vw;
-    background-image: url(../components/Airbnb/image/Kanban-md.png);
+    background-image: url(../assets/image/Home/Kanban-md.png);
     background-position: -23.25vw;
   }
   .kanban {
@@ -479,7 +470,6 @@ body::-webkit-scrollbar {
     padding: 0;
     margin: 0;
   }
-  /**/
   .goTo {
     width: 11.46vw;
     height: 4.428vw;
@@ -513,7 +503,7 @@ body::-webkit-scrollbar {
   }
   .dontWorry {
     height: 47.136vw;
-    background-image: url(../components/Airbnb/image/dontWorry-md.png);
+    background-image: url(../assets/image/Home/dontWorry-md.png);
     background-position: -8.5vw;
     border-radius: 2vw;
     padding: 0 5.20834vw;
@@ -531,7 +521,6 @@ body::-webkit-scrollbar {
   .dontWorry .goTo {
     margin: 2.60417vw 0 0;
   }
-  /**/
   .family .yuan-row {
     padding-top: 2.08333vw;
   }
@@ -576,7 +565,7 @@ body::-webkit-scrollbar {
   }
   .rent {
     height: 47.137vw;
-    background-image: url(../components/Airbnb/image/rent-md.png);
+    background-image: url(../assets/image/Home/rent-md.png);
     background-position: -8.5vw;
     border-radius: 2vw;
     padding: 0;
@@ -603,7 +592,7 @@ body::-webkit-scrollbar {
     margin: 2.60417vw 0 0;
   }
 }
-/**/
+
 @media screen and (min-width: 1280px) {
   .notice {
     height: 58px;
@@ -637,7 +626,6 @@ body::-webkit-scrollbar {
     font-size: 1.09375vw;
     border-radius: 0.7vw;
   }
-  /**/
   .body {
     padding-top: 5.20834vw;
   }
@@ -670,10 +658,9 @@ body::-webkit-scrollbar {
   .around .around-div .item span {
     font-size: 1.25vw;
   }
-  /**/
   .dontWorry {
     height: 31.407vw;
-    background-image: url(../components/Airbnb/image/dontWorry-md.png);
+    background-image: url(../assets/image/Home/dontWorry-md.png);
     background-position: 0;
     border-radius: 1.5vw;
     padding: 0 5.20834vw;
@@ -684,7 +671,6 @@ body::-webkit-scrollbar {
     height: 3.75vw;
     font-size: 1.25vw;
   }
-  /**/
   .family .yuan-row {
     padding-top: 1.25vw;
   }
@@ -705,7 +691,6 @@ body::-webkit-scrollbar {
     font-size: 1.40625vw;
     margin-top: 0.625vw;
   }
-  /**/
   .haveFun {
     margin: 4.25vw 0;
   }
@@ -728,7 +713,6 @@ body::-webkit-scrollbar {
     font-size: 1.09375vw !important;
     margin-top: 0.3125vw !important;
   }
-  /**/
   .rent {
     height: 31.407vw;
     border-radius: 1vw;
@@ -746,14 +730,5 @@ body::-webkit-scrollbar {
     height: 3.75vw;
     font-size: 1.25vw;
   }
-  #banner {
-    display: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9;
-  }
 }
-
 </style>

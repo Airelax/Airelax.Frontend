@@ -2,27 +2,18 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    isWordShow: false,
+    destination:"",
+    adult:0,
+    child:0,
+    toddler:0,
+    date: new Date(),
+    isBodyShow: true,
+    fullWidth: 0
   },
   mutations: {
-    show(state){
-      state.isWordShow = true;
-    },
-    hide(state){
-      state.isWordShow = false;
-    }
   },
   actions: {
-    show({commit}){
-      commit('show')
-    },
-    hide({commit}){
-      commit('hide')
-    }
   },
   getters: {
-    showWord(state){
-      return state.isWordShow
-    }
   }
 })
