@@ -1,0 +1,76 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #000;
+}
+.container {
+  text-align: start;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  .rwd {
+    .col-12.col-md-6:nth-of-type(1) {
+      .sticky {
+        padding: 30px;
+        .room {
+          .col-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 100%;
+              border-radius: 20px;
+            }
+          }
+          .col-8 {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .col-12.col-md-6:nth-of-type(2) {
+      .yourTrip,
+      .priceDetail,
+      .payWay,
+      .requiredInfo,
+      .unsubscribe,
+      .checkAndSub {
+        border-top: 8px solid #ededed;
+        padding: 30px;
+        background-color: #fff;
+        h3 {
+          margin: 10px 0 20px 0;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.offcanvas {
+  height: auto;
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  .offcanvas-header {
+    border-bottom: 1px solid #ededed;
+    .btn-close {
+      padding-left: 15px;
+      opacity: 1;
+      font-size: 12px;
+    }
+    .offcanvas-title {
+      margin: auto;
+      font-weight: 500;
+    }
+  }
+  .offcanvas-body {
+    padding: 20px 25px;
+    font-weight: 200;
+  }
+  .offcanvas-footer {
+    padding: 20px 10px;
+    border-top: 1px solid #ededed;
+  }
+}

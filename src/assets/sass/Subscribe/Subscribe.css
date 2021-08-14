@@ -1,0 +1,92 @@
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+.container {
+  text-align: start;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room {
+  padding: 15px;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-4 img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-8 {
+  font-weight: 300;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .priceDetail,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .payWay,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub {
+  border-top: 8px solid #ededed;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.container .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip h3,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .priceDetail h3,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .payWay h3,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo h3,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe h3,
+.container .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub h3 {
+  margin: 10px 0 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.offcanvas {
+  height: auto;
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+}
+
+.offcanvas .offcanvas-header {
+  border-bottom: 1px solid #ededed;
+}
+
+.offcanvas .offcanvas-header .btn-close {
+  padding-left: 15px;
+  opacity: 1;
+  font-size: 12px;
+}
+
+.offcanvas .offcanvas-header .offcanvas-title {
+  margin: auto;
+  font-weight: 500;
+}
+
+.offcanvas .offcanvas-body {
+  padding: 20px 35px;
+  font-weight: 200;
+}
+
+.offcanvas .offcanvas-footer {
+  padding: 20px 10px;
+  border-top: 1px solid #ededed;
+}
+/*# sourceMappingURL=Subscribe.css.map */
