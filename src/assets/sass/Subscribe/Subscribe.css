@@ -7,53 +7,32 @@ a:hover {
   color: #000;
 }
 
-.container {
+.container-xl {
   text-align: start;
+  padding: 0;
   font-family: "Noto Sans TC", sans-serif;
 }
 
-.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room {
-  padding: 15px;
+.container-xl .rwd .col-12.col-md-6:nth-of-type(1) .sticky {
+  padding: 30px;
 }
 
-.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-4 img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.container .rwd .col-12.col-md-6:nth-of-type(1) .sticky .room .col-8 {
-  font-weight: 300;
-}
-
-.container .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .priceDetail,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .payWay,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub {
-  border-top: 8px solid #ededed;
-  padding: 15px;
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .SubPriceDetail,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .payWay,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub {
+  padding: 30px;
   background-color: #fff;
 }
 
-.container .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip h3,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .priceDetail h3,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .payWay h3,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo h3,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe h3,
-.container .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub h3 {
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip h3,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .SubPriceDetail h3,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .payWay h3,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo h3,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe h3,
+.container-xl .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub h3 {
   margin: 10px 0 20px 0;
   font-size: 18px;
   font-weight: 500;
@@ -81,12 +60,61 @@ a:hover {
 }
 
 .offcanvas .offcanvas-body {
-  padding: 20px 35px;
+  padding: 20px 25px;
   font-weight: 200;
 }
 
 .offcanvas .offcanvas-footer {
   padding: 20px 10px;
   border-top: 1px solid #ededed;
+}
+
+@media screen and (max-width: 768px) {
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .SubPriceDetail,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .payWay,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub {
+    border-top: 8px solid #ededed;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-xl .rwd {
+    padding: 0 50px;
+  }
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(1) {
+    position: relative;
+  }
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(1) .sticky {
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    margin: 0 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 30px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 28vh;
+  }
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip {
+    border: none;
+  }
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .SubPriceDetail,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .payWay,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub {
+    border-top: 1px solid #ededed;
+  }
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .yourTrip h3,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .SubPriceDetail h3,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .payWay h3,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .requiredInfo h3,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .unsubscribe h3,
+  .container-xl .rwd .col-12.col-md-6:nth-of-type(2) .checkAndSub h3 {
+    font-size: 22px;
+  }
 }
 /*# sourceMappingURL=Subscribe.css.map */

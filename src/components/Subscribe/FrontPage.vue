@@ -34,6 +34,33 @@
     }
   }
 }
+
+@media screen and(min-width:768px) {
+  .frontPage {
+    position: relative;
+    padding: 30px 35px;
+    margin-top: 90px;
+    .col-1.btn {
+      padding: 0;
+      display: flex;
+      img {
+        margin: auto;
+        width: 100%;
+        height: 30px;
+      }
+    }
+    .col-11 {
+      display: flex;
+      h2 {
+        margin: auto;
+        width: 100%;
+        font-weight: 500;
+        font-size: 30px;
+        opacity: 1;
+      }
+    }
+  }
+}
 </style>
 <script>
 export default {};

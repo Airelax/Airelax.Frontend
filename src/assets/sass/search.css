@@ -40,9 +40,6 @@
 }
 
 * .eachRoom .col-12.col-md-7 .row:nth-of-type(1) .col.col-md-10 .comment .star {
-  height: 14px;
-  width: 14px;
-  fill: #ff385c;
   margin: auto 4px;
 }
 
