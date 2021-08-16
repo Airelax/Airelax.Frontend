@@ -559,7 +559,7 @@ export default {
                     name: 'Books',
                     chinese: '書',
                     mapping: 301,
-                    img: require('')
+                    img: require('@/assets/pic/FacilityIcons/Books.svg')
                 },
                 {
                     name: 'Ethernet',
@@ -581,9 +581,9 @@ export default {
                 },
                 {
                     name: 'Piano',
-                    chinese: '',
+                    chinese: '鋼琴',
                     mapping: 305,
-                    img: require('')
+                    img: require('@/assets/pic/FacilityIcons/Piano.svg')
                 },
                 {
                     name: 'PingPangTable',
@@ -703,7 +703,7 @@ export default {
                     name: 'ResortAccess',
                     chinese: '渡假村入場證',
                     mapping: 905,
-                    img: require('')
+                    img: require('@/assets/pic/FacilityIcons/ResortAccess.svg')
                 },
                 {
                     name: 'SkiOut',
@@ -751,7 +751,7 @@ export default {
                     name: 'EVCharger',
                     chinese: '電動汽車充電設備',
                     mapping: 1102,
-                    img: require('')
+                    img: require('@/assets/pic/FacilityIcons/EVCharger.svg')
                 },
                 {
                     name: 'Gym',
@@ -769,7 +769,7 @@ export default {
                     name: 'Sauna',
                     chinese: '三溫暖',
                     mapping: 1111,
-                    img: require('')
+                    img: require('@/assets/pic/FacilityIcons/Sauna.svg')
                 },
                 {
                     name: 'SingleLevelHome',
