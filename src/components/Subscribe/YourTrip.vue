@@ -127,7 +127,13 @@
       <SubPeople></SubPeople>
     </div>
     <div class="offcanvas-footer">
-      <div class="btn btn-cancel" data-bs-dismiss="offcanvas">取消</div>
+      <div
+        class="btn btn-cancel"
+        data-bs-dismiss="offcanvas"
+        @click="judgeCount($store.state.adult)"
+      >
+        取消
+      </div>
       <div
         class="btn btn-dark"
         data-bs-dismiss="offcanvas"
@@ -171,7 +177,7 @@
                 60
               }}晚 {{}}
             </div>
-            <div class="col-2 ms-auto">
+            <!-- <div class="col-3 ms-auto">
               <form class="form-floating startForm">
                 <input
                   type="text"
@@ -183,7 +189,7 @@
                 <label for="floatingInputValue">入住</label>
               </form>
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <form class="form-floating endForm">
                 <input
                   type="text"
@@ -194,7 +200,7 @@
                 />
                 <label for="floatingInputValue">退房</label>
               </form>
-            </div>
+            </div> -->
           </div>
           <div class="date">
             <SubDate></SubDate>

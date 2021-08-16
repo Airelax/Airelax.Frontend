@@ -49,11 +49,7 @@
 <script>
 export default {
   data() {
-    return {
-      modelConfig: {
-        type: "date",
-      },
-    };
+    return {};
   },
 };
 </script>

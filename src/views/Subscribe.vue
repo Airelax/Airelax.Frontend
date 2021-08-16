@@ -14,7 +14,7 @@
       </div>
       <div class="col-12 col-md-6">
         <YourTrip :fullWidth="fullWidth"></YourTrip>
-        <PayWay></PayWay>
+        <PayWay :fullWidth="fullWidth"></PayWay>
         <SubPriceDetail
           v-if="get && fullWidth < 768"
           :room="room"
