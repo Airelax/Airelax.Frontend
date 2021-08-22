@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import Layout from './components/Layout/Default';
+import Layout from "./components/Layout/Default";
 export default {
-  components:{Layout},
-  mounted(){
+  components: { Layout },
+  mounted() {
     let vm = this;
     vm.$store.state.fullWidth = document.body.clientWidth;
-    window.addEventListener("resize", function() {
-        vm.$store.state.fullWidth = document.body.clientWidth;
+    window.addEventListener("resize", function () {
+      vm.$store.state.fullWidth = document.body.clientWidth;
     });
-  }  
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -27,5 +27,6 @@ export default {
   text-align: center;
 }
 </style>
+
 
 
