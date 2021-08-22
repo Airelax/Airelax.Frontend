@@ -1,7 +1,7 @@
 <template>
-  <Layout :isVideoBanner="true" :img="img" :title="'請描述你的房源'">
+  <Layout :isVideoBanner="true" :img="img" :title="'來為房源取名吧'">
     <div class="all-center">
-      <TextContent :title="'撰寫房源描述'"></TextContent>
+      <TextContent :title="'建立標題'"></TextContent>
     </div>
   </Layout>
 </template>
@@ -18,12 +18,12 @@
 </style>
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import TextContent from "../../components/_Eric/NewHouse/TextContent.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import TextContent from "../../components/NewHouse/TextContent.vue";
 export default {
   data() {
     return {
-      img: require("@/assets/pic/rent_page/DescriptHouse.jpg"),
+      img: require("@/assets/pic/rent_page/NameHouse.jpg"),
     };
   },
   components: {

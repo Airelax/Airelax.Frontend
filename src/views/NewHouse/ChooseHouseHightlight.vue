@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import SelectHighlight from "../../components/_Eric/NewHouse/SelectHighlight.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import SelectHighlight from "../../components/NewHouse/SelectHighlight.vue";
 
 export default {
   components: {

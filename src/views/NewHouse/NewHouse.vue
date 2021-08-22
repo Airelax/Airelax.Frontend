@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import CreateStep from "../../components/_Eric/NewHouse/CreateStep.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import CreateStep from "../../components/NewHouse/CreateStep.vue";
 
 export default {
   components: {

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import SelectFacility from "../../components/_Eric/NewHouse/SelectFacilityContent.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import SelectFacility from "../../components/NewHouse/SelectFacilityContent.vue";
 
 export default {
   components: {

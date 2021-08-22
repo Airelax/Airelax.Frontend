@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import SelectHouseCategory from "../../components/_Eric/NewHouse/SelectHouseCategoryContent.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import SelectHouseCategory from "../../components/NewHouse/SelectHouseCategoryContent.vue";
 
 export default {
   components: {

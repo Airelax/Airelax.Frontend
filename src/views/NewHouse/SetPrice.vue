@@ -10,8 +10,8 @@
 
 
 <script>
-import Layout from "../../components/_Eric/NewHouse/Layout.vue";
-import SetPriceContent from "../../components/_Eric/NewHouse/SetPriceContent.vue";
+import Layout from "../../components/NewHouse/Layout.vue";
+import SetPriceContent from "../../components/NewHouse/SetPriceContent.vue";
 
 export default {
   components: {
