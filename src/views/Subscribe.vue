@@ -77,6 +77,7 @@ export default {
     },
   },
   mounted() {
+    window.scrollTo(0, 0);
     const vm = this;
     this.fullWidth = document.body.clientWidth;
     window.addEventListener("resize", function () {

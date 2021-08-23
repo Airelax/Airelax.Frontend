@@ -48,8 +48,13 @@
 </style>
 <script>
 export default {
-  data() {
-    return {};
-  },
-};
+    data() {
+        return {
+            modelConfig: {
+                type: 'string',
+                mask: 'YYYY年MM月DD日'
+            },
+        }
+    }
+}
 </script>

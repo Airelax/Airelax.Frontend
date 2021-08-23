@@ -3,9 +3,9 @@
     <h3>你的旅程</h3>
     <div class="col-9">
       <p>日期</p>
-      <p v-if="getDuring">
-        {{ convertLocale($store.state.date.start) }} -
-        {{ convertLocale($store.state.date.end) }}
+      <p>
+        {{ $store.state.date.start }} -
+        {{ $store.state.date.end}}
       </p>
     </div>
     <div class="col-3">
@@ -31,7 +31,7 @@
     </div>
     <div class="col-9">
       <p>房客人數</p>
-      <p v-if="getPeople">
+      <p>
         {{ $store.state.adult + $store.state.child }}位
         <span v-if="$store.state.toddler > 0">
           ,{{ $store.state.toddler }}名嬰幼兒
@@ -177,30 +177,6 @@
                 60
               }}晚 {{}}
             </div>
-            <!-- <div class="col-3 ms-auto">
-              <form class="form-floating startForm">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="floatingInputValue"
-                  v-model="$store.state.date.start"
-                  disabled
-                />
-                <label for="floatingInputValue">入住</label>
-              </form>
-            </div>
-            <div class="col-3">
-              <form class="form-floating endForm">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="floatingInputValue"
-                  v-model="$store.state.date.end"
-                  disabled
-                />
-                <label for="floatingInputValue">退房</label>
-              </form>
-            </div> -->
           </div>
           <div class="date">
             <SubDate></SubDate>

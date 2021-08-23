@@ -24,7 +24,10 @@ const routes = [
   {
     path: '/new-house',
     name: 'NewHouse',
-    component: () => import('../views/NewHouse/NewHouse.vue')
+    component: () => import('../views/NewHouse/NewHouse.vue'),
+    meta: {
+      plainLayout: true,
+    },
   }
 ]
 

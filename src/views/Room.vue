@@ -133,7 +133,7 @@
             >
               查看可訂日期
             </button>
-            <button v-else>預定</button>
+            <router-link to="/subscribe" v-else><button :class="{'w-100':true,'h-100':fullWidth < 768}">預定</button></router-link>
 
             <div
               class="hide-price"

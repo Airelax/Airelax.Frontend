@@ -1,7 +1,13 @@
 <template>
-  <Layout>
-    <router-view />
-  </Layout>
+  <div v-if="!$route.meta.plainLayout">
+    <Layout>
+      <router-view />
+    </Layout>
+  </div>
+
+  <div v-if="$route.meta.plainLayout">
+      <router-view />
+  </div>
 </template>
 
 <script>
@@ -14,7 +20,7 @@ export default {
     window.addEventListener("resize", function () {
       vm.$store.state.fullWidth = document.body.clientWidth;
     });
-  },
+  }
 };
 </script>
 
